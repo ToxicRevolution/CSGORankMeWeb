@@ -11,7 +11,7 @@ This web interface is to allow users to view the stats from Counter Strike Globa
 <li>Check stats of any player you desire that plays on the server(s) you are looking for.</li>
 </ul>
 
-# Ideads
+# Ideas
 <ul>
 <li>Page for all database strings as functions so then when you need to get data from database you just call the function and use the returned data.  For instance, getTotalPlayrNumber() would select all player records from the player table and count them and return that number</li>
  
