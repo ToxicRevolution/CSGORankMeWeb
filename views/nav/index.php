@@ -5,16 +5,16 @@
                     </li>
                     <div class="menu">
                         <li>
-                            <a href="#" class="active">Home <span class="fa fa-home pull-right"></span></a>
+                            <a href="index.php" class="<?php if($page =='home'){echo 'active';}?>">Home <span class="fa fa-home pull-right"></span></a>
                         </li>
                         <li>
-                            <a href="#"">Leaderboards <span class="fa fa-list-alt pull-right"></span></a>
+                            <a href="leaderboards.php" class="<?php if($page =='leaderboards'){echo 'active';}?>">Leaderboards <span class="fa fa-list-alt pull-right"></span></a>
                         </li>
                         <li>
-                            <a href="#">Player Search<span class="fa fa-search pull-right"></span></a>
+                            <a href="search.php" class="<?php if($page =='search'){echo 'active';}?>">Player Search<span class="fa fa-search pull-right"></span></a>
                         </li>
                         <li>
-                            <a href="#">Servers <span class="fa fa-server pull-right"></span></a>
+                            <a href="servers.php" class="<?php if($page =='servers'){echo 'active';}?>">Servers <span class="fa fa-server pull-right"></span></a>
                         </li>
                     </div>
                     
