@@ -1,43 +1,38 @@
-@import url(http://fonts.googleapis.com/css?family=Lato);
-.container {
+.container{
     width: 95%;
     overflow: hidden;
     display: inline-block;
 }
-
 .side-bar {
-    background: #414141;
-    position: absolute;
+    background: @nav-background;
+    position: fixed;
     height: 100%;
     width: 200px;
-    color: #fff;
+    color: @nav-font-color;
     transition: margin-left 0.5s;
 }
-
 .side-bar ul {
     list-style: none;
     padding: 0px;
 }
-
 .side-bar ul li.menu-head {
-    font-family: 'Lato', sans-serif;
+    font-family: @nav-font;
     padding: 20px;
 }
 
 .side-bar ul li.menu-head a {
-    color: #fff;
+    color: @nav-font-color;
     text-decoration: none;
     height: 50px;
 }
-
 .side-bar ul .menu-head a {
-    color: #fff;
+    color: @nav-font-color;
     text-decoration: none;
     height: 50px;
 }
 
 .side-bar ul .menu li a {
-    color: #fff;
+    color: @nav-font-color;
     text-decoration: none;
     display: inline-table;
     width: 100%;
@@ -48,14 +43,14 @@
 }
 
 .side-bar ul .menu li a:hover {
-    border-left: 3px solid #ECECEA;
+    border-left: 3px solid @nav-left-bar;
     padding-left: 17px;
 }
 
 .side-bar ul .menu li a.active {
     padding-left: 17px;
-    background: #A44545;
-    border-left: 3px solid #ECECEA;
+    background: @nav-active;
+    border-left: 3px solid @nav-left-bar;
 }
 
 .side-bar ul .menu li a.active:before {
@@ -65,7 +60,7 @@
     height: 0;
     border-top: 20px solid transparent;
     border-bottom: 20px solid transparent;
-    border-left: 7px solid #A44545;
+    border-left: 7px solid @nav-active;
     margin-top: -10px;
     margin-left: 180px;
 }
