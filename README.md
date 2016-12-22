@@ -36,12 +36,12 @@ CSGO Web Rank Me's Code Is Released Under The <a href="https://github.com/ToxicR
 
 # Creators 
 
-<h1> Andy Petrizilka </h1>
+<h3> Andy Petrizilka </h3>
 <ul>
 	<li>https://github.com/APet74</li>
 	<li>https://twitter.com/AndyPetrzilka</li>
 </ul>
-<h1>Kenny Lindelof</h1>
+<h3>Kenny Lindelof</h3>
 <ul>
 	<li>https://github.com/kennyLtv</li>
 	<li>https://twitter.com/kennyLtv</li>
