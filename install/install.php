@@ -48,8 +48,8 @@
 		  				<td><input type="text" name="databasePass" id='installInputs' tabindex="6" required/></td>
 		  			</tr>
 		  			<tr>
-		  				<td>Admin Username* <a href="#" data-toggle="tooltip" title="This Account will be used to add servers to view the in the server tab, you will be able to see connected players, map and server ip from that page." class="fa fa-question" aria-hidden="true"></i> </a> &nbsp;&nbsp;</td>
-		  				<td><input type="text" name="adminUser" id='installInputs' tabindex="7" required/></td>
+		  				<td>Admin Email* <a href="#" data-toggle="tooltip" title="This Account will be used to add servers to view the in the server tab, you will be able to see connected players, map and server ip from that page." class="fa fa-question" aria-hidden="true"></i> </a> &nbsp;&nbsp;</td>
+		  				<td><input type="text" name="adminEmail" id='installInputs' tabindex="7" required/></td>
 		  			</tr>
 		  			<tr>
 		  				<td>Admin Password* <a href="#" data-toggle="tooltip" title="Desired password for your admin account."><i class="fa fa-question" aria-hidden="true"></i> </a> &nbsp;&nbsp;</td>
