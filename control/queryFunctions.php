@@ -1,7 +1,6 @@
 <?php
 
-require_once("../config.php");
-getTotalPlayers(){
+function getTotalPlayers($steamID, $dbh){
 	$stmt = "SELECT count(steam) FROM rankme";
 	$query = $dbh->prepare($stmt);
 	$query->execute();
@@ -9,7 +8,7 @@ getTotalPlayers(){
 	return $item;	
 }
 
-getLastIP(){
+function getLastIP($steamID, $dbh){
 	$stmt = "SELECT lastip FROM rankme WHERE steam = :steamID";
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
@@ -18,7 +17,7 @@ getLastIP(){
 	return $item[0];
 }
 
-getScore(){
+function getScore($steamID, $dbh){
 	$stmt = "SELECT score FROM rankme WHERE steam = :steamID";
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
@@ -27,16 +26,16 @@ getScore(){
 	return $item[0];
 }
 
-getKills(){
+function getKills($steamID, $dbh){
 	$stmt = "SELECT kills FROM rankme WHERE steam = :steamID";
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
 	$query->execute();
-	$item = $query->fetch(PDO::FETCH_ASSOC);
+	$item = $query->fetchColumn();
 	return $item[0];
 }
 
-getDeaths(){
+function getDeaths($steamID, $dbh){
 	$stmt = "SELECT deaths FROM rankme WHERE steam = :steamID";
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
@@ -45,7 +44,7 @@ getDeaths(){
 	return $item[0];
 }
 
-getAssists(){
+function getAssists($steamID, $dbh){
 	$stmt = "SELECT assists FROM rankme WHERE steam = :steamID";
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
@@ -54,7 +53,7 @@ getAssists(){
 	return $item[0];
 }
 
-getSuicides(){
+function getSuicides($steamID, $dbh){
 	$stmt = "SELECT suicides FROM rankme WHERE steam = :steamID";
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
@@ -63,7 +62,7 @@ getSuicides(){
 	return $item[0];
 }
 
-getTKs(){
+function getTKs($steamID, $dbh){
 	$stmt = "SELECT tk FROM rankme WHERE steam = :steamID";
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
@@ -72,7 +71,7 @@ getTKs(){
 	return $item[0];
 }
 
-getShots(){
+function getShots($steamID, $dbh){
 	$stmt = "SELECT shots FROM rankme WHERE steam = :steamID";
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
@@ -81,7 +80,7 @@ getShots(){
 	return $item[0];
 }
 
-getHits(){
+function getHits($steamID, $dbh){
 	$stmt = "SELECT hits FROM rankme WHERE steam = :steamID";
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
@@ -90,7 +89,7 @@ getHits(){
 	return $item[0];
 }
 
-getHeadshots(){
+function getHeadshots($steamID, $dbh){
 	$stmt = "SELECT headshots FROM rankme WHERE steam = :steamID";
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
@@ -99,7 +98,7 @@ getHeadshots(){
 	return $item[0];
 }
 
-getConneced(){
+function getConneced($steamID, $dbh){
 	$stmt = "SELECT connected FROM rankme WHERE steam = :steamID";
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
@@ -108,7 +107,7 @@ getConneced(){
 	return $item[0];
 }
 
-getRoundsT(){
+function getRoundsT($steamID, $dbh){
 	$stmt = "SELECT rounds_tr FROM rankme WHERE steam = :steamID";
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
@@ -117,7 +116,7 @@ getRoundsT(){
 	return $item[0];
 }
 
-getRoundsCT(){
+function getRoundsCT($steamID, $dbh){
 	$stmt = "SELECT rounds_ct FROM rankme WHERE steam = :steamID";
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
@@ -126,7 +125,7 @@ getRoundsCT(){
 	return $item[0];
 }
 
-getLastConnected(){
+function getLastConnected($steamID, $dbh){
 	$stmt = "SELECT lastconnect FROM rankme WHERE steam = :steamID";
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
@@ -135,7 +134,7 @@ getLastConnected(){
 	return $item[0];
 }
 
-getKnife(){
+function getKnife($steamID, $dbh){
 	$stmt = "SELECT knife FROM rankme WHERE steam = :steamID";
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
@@ -144,7 +143,7 @@ getKnife(){
 	return $item[0];
 }
 
-getGlock(){
+function getGlock($steamID, $dbh){
 	$stmt = "SELECT glock FROM rankme WHERE steam = :steamID";
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
@@ -153,7 +152,7 @@ getGlock(){
 	return $item[0];
 }
 
-getP2000(){
+function getP2000($steamID, $dbh){
 	$stmt = "SELECT hk2000 FROM rankme WHERE steam = :steamID";
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
@@ -162,7 +161,7 @@ getP2000(){
 	return $item[0];
 }
 
-getUSPS(){
+function getUSPS($steamID, $dbh){
 	$stmt = "SELECT usp_silencer FROM rankme WHERE steam = :steamID";
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
@@ -171,7 +170,7 @@ getUSPS(){
 	return $item[0];
 }
 
-getP250(){
+function getP250($steamID, $dbh){
 	$stmt = "SELECT p250 FROM rankme WHERE steam = :steamID";
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
@@ -180,7 +179,7 @@ getP250(){
 	return $item[0];
 }
 
-getDeagle(){
+function getDeagle($steamID, $dbh){
 	$stmt = "SELECT deagle FROM rankme WHERE steam = :steamID";
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
@@ -189,7 +188,7 @@ getDeagle(){
 	return $item[0];
 }
 
-getElite(){
+function getElite($steamID, $dbh){
 	$stmt = "SELECT elite FROM rankme WHERE steam = :steamID";
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
@@ -198,7 +197,7 @@ getElite(){
 	return $item[0];
 }
 
-getFiveSeven(){
+function getFiveSeven($steamID, $dbh){
 	$stmt = "SELECT fiveseven FROM rankme WHERE steam = :steamID";
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
@@ -207,7 +206,7 @@ getFiveSeven(){
 	return $item[0];
 }
 
-getTec9(){
+function getTec9($steamID, $dbh){
 	$stmt = "SELECT tec9 FROM rankme WHERE steam = :steamID";
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
@@ -216,7 +215,7 @@ getTec9(){
 	return $item[0];
 }
 
-getCZ75A(){
+function getCZ75A($steamID, $dbh){
 	$stmt = "SELECT cz75a FROM rankme WHERE steam = :steamID";
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
@@ -225,7 +224,7 @@ getCZ75A(){
 	return $item[0];
 }
 
-getRevolver(){
+function getRevolver($steamID, $dbh){
 	$stmt = "SELECT revolver FROM rankme WHERE steam = :steamID";
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
@@ -234,7 +233,7 @@ getRevolver(){
 	return $item[0];
 }
 
-getNova(){
+function getNova($steamID, $dbh){
 	$stmt = "SELECT nova FROM rankme WHERE steam = :steamID";
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
@@ -243,7 +242,7 @@ getNova(){
 	return $item[0];
 }
 
-getX1014(){
+function getX1014($steamID, $dbh){
 	$stmt = "SELECT xm1014 FROM rankme WHERE steam = :steamID";
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
@@ -252,7 +251,7 @@ getX1014(){
 	return $item[0];
 }
 
-getMag7(){
+function getMag7($steamID, $dbh){
 	$stmt = "SELECT mag7 FROM rankme WHERE steam = :steamID";
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
@@ -261,16 +260,16 @@ getMag7(){
 	return $item[0];
 }
 
-getSawedOff(){
+function getSawedOff($steamID, $dbh){
 	$stmt = "SELECT sawedoff FROM rankme WHERE steam = :steamID";
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
 	$query->execute();
 	$item = $query->fetch(PDO::FETCH_ASSOC);
-	return $iitem[0]tem;
+	return $iitem[0];
 }
 
-getBizon(){
+function getBizon($steamID, $dbh){
 	$stmt = "SELECT bizon FROM rankme WHERE steam = :steamID";
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
@@ -279,7 +278,7 @@ getBizon(){
 	return $item[0];
 }
 
-getMac10(){
+function getMac10($steamID, $dbh){
 	$stmt = "SELECT mac10 FROM rankme WHERE steam = :steamID";
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
@@ -288,7 +287,7 @@ getMac10(){
 	return $item[0];
 }
 
-getMp9(){
+function getMp9($steamID, $dbh){
 	$stmt = "SELECT mp9 FROM rankme WHERE steam = :steamID";
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
@@ -297,7 +296,7 @@ getMp9(){
 	return $item[0];
 }	
 
-getMP7(){
+function getMP7($steamID, $dbh){
 	$stmt = "SELECT mp7 FROM rankme WHERE steam = :steamID";
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
@@ -306,7 +305,7 @@ getMP7(){
 	return $item[0];
 }
 
-getUMP45(){
+function getUMP45($steamID, $dbh){
 	$stmt = "SELECT ump45 FROM rankme WHERE steam = :steamID";
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
@@ -315,7 +314,7 @@ getUMP45(){
 	return $item[0];
 }
 
-getP90(){
+function getP90($steamID, $dbh){
 	$stmt = "SELECT p90 FROM rankme WHERE steam = :steamID";
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
@@ -324,7 +323,7 @@ getP90(){
 	return $item[0];
 }
 
-getGalilar(){
+function getGalilar($steamID, $dbh){
 	$stmt = "SELECT galilar FROM rankme WHERE steam = :steamID";
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
@@ -333,7 +332,7 @@ getGalilar(){
 	return $item[0];
 }
 
-getAK47(){
+function getAK47($steamID, $dbh){
 	$stmt = "SELECT ak47 FROM rankme WHERE steam = :steamID";
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
@@ -342,7 +341,7 @@ getAK47(){
 	return $item[0];
 }
 
-getScar20(){
+function getScar20($steamID, $dbh){
 	$stmt = "SELECT sccar20 FROM rankme WHERE steam = :steamID";
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
@@ -351,7 +350,7 @@ getScar20(){
 	return $item[0];
 }
 
-getFamas(){
+function getFamas($steamID, $dbh){
 	$stmt = "SELECT famas FROM rankme WHERE steam = :steamID";
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
@@ -360,7 +359,7 @@ getFamas(){
 	return $item[0];
 }
 
-getM4A4(){
+function getM4A4($steamID, $dbh){
 	$stmt = "SELECT m4a1 FROM rankme WHERE steam = :steamID";
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
@@ -369,7 +368,7 @@ getM4A4(){
 	return $item[0];
 }
 
-getM4a1S(){
+function getM4a1S($steamID, $dbh){
 	$stmt = "SELECT m4a1_silencer FROM rankme WHERE steam = :steamID";
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
@@ -378,7 +377,7 @@ getM4a1S(){
 	return $item[0];
 }
 
-getAug(){
+function getAug($steamID, $dbh){
 	$stmt = "SELECT aug FROM rankme WHERE steam = :steamID";
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
@@ -387,7 +386,7 @@ getAug(){
 	return $item[0];
 }
 
-getSSG08(){
+function getSSG08($steamID, $dbh){
 	$stmt = "SELECT ssg08 FROM rankme WHERE steam = :steamID";
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
@@ -396,7 +395,7 @@ getSSG08(){
 	return $item[0];
 }
 
-getSG556(){
+function getSG556($steamID, $dbh){
 	$stmt = "SELECT sg556 FROM rankme WHERE steam = :steamID";
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
@@ -405,7 +404,7 @@ getSG556(){
 	return $item[0];
 }
 
-getAWP(){
+function getAWP($steamID, $dbh){
 	$stmt = "SELECT awp FROM rankme WHERE steam = :steamID";
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
@@ -414,7 +413,7 @@ getAWP(){
 	return $item[0];
 }
 
-getG3SG1(){
+function getG3SG1($steamID, $dbh){
 	$stmt = "SELECT g3sg1 FROM rankme WHERE steam = :steamID";
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
@@ -423,7 +422,7 @@ getG3SG1(){
 	return $item[0];
 }
 
-getm249(){
+function getm249($steamID, $dbh){
 	$stmt = "SELECT m249 FROM rankme WHERE steam = :steamID";
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
@@ -432,7 +431,7 @@ getm249(){
 	return $item[0];
 }
 
-getNegev(){
+function getNegev($steamID, $dbh){
 	$stmt = "SELECT negev FROM rankme WHERE steam = :steamID";
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
@@ -441,7 +440,7 @@ getNegev(){
 	return $item[0];
 }
 
-getHeGernade(){
+function getHeGernade($steamID, $dbh){
 	$stmt = "SELECT hegrenade FROM rankme WHERE steam = :steamID";
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
@@ -450,7 +449,7 @@ getHeGernade(){
 	return $item[0];
 }
 
-getFlashBang(){
+function getFlashBang($steamID, $dbh){
 	$stmt = "SELECT flashbang FROM rankme WHERE steam = :steamID";
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
@@ -459,7 +458,7 @@ getFlashBang(){
 	return $item[0];
 }
 
-getSmokeGrenade(){
+function getSmokeGrenade($steamID, $dbh){
 	$stmt = "SELECT smoekgrenade FROM rankme WHERE steam = :steamID";
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
@@ -468,7 +467,7 @@ getSmokeGrenade(){
 	return $item[0];
 }
 
-getInferno(){
+function getInferno($steamID, $dbh){
 	$stmt = "SELECT inferno FROM rankme WHERE steam = :steamID";
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
@@ -477,7 +476,7 @@ getInferno(){
 	return $item[0];
 }
 
-getDecoy(){
+function getDecoy($steamID, $dbh){
 	$stmt = "SELECT decoy FROM rankme WHERE steam = :steamID";
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
@@ -486,7 +485,7 @@ getDecoy(){
 	return $item[0];
 }
 
-getTaser(){
+function getTaser($steamID, $dbh){
 	$stmt = "SELECT taser FROM rankme WHERE steam = :steamID";
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
@@ -495,7 +494,7 @@ getTaser(){
 	return $item[0];
 }
 
-getHead(){
+function getHead($steamID, $dbh){
 	$stmt = "SELECT head FROM rankme WHERE steam = :steamID";
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
@@ -504,7 +503,7 @@ getHead(){
 	return $item[0];
 }
 
-getChest(){
+function getChest($steamID, $dbh){
 	$stmt = "SELECT chest FROM rankme WHERE steam = :steamID";
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
@@ -513,7 +512,7 @@ getChest(){
 	return $item[0];
 }
 
-getStomach(){
+function getStomach($steamID, $dbh){
 	$stmt = "SELECT stomach FROM rankme WHERE steam = :steamID";
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
@@ -522,7 +521,7 @@ getStomach(){
 	return $item[0];
 }
 
-getLeftArm(){
+function getLeftArm($steamID, $dbh){
 	$stmt = "SELECT left_arm FROM rankme WHERE steam = :steamID";
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
@@ -531,7 +530,7 @@ getLeftArm(){
 	return $item[0];
 }
 
-getRightArm(){
+function getRightArm($steamID, $dbh){
 	$stmt = "SELECT right_arm FROM rankme WHERE steam = :steamID";
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
@@ -540,7 +539,7 @@ getRightArm(){
 	return $item[0];
 }
 
-getLeftLeg(){
+function getLeftLeg($steamID, $dbh){
 	$stmt = "SELECT left_leg FROM rankme WHERE steam = :steamID";
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
@@ -549,7 +548,7 @@ getLeftLeg(){
 	return $item[0];
 }
 
-getRightleg(){
+function getRightleg($steamID, $dbh){
 	$stmt = "SELECT right_leg FROM rankme WHERE steam = :steamID";
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
@@ -558,7 +557,7 @@ getRightleg(){
 	return $item[0];
 }
 
-getC4Plants(){
+function getC4Plants($steamID, $dbh){
 	$stmt = "SELECT c4_planted FROM rankme WHERE steam = :steamID";
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
@@ -567,7 +566,7 @@ getC4Plants(){
 	return $item[0];
 }
 
-getC4Exploded(){
+function getC4Exploded($steamID, $dbh){
 	$stmt = "SELECT c4_exploded FROM rankme WHERE steam = :steamID";
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
@@ -576,7 +575,7 @@ getC4Exploded(){
 	return $item[0];
 }
 
-getC4Defused(){
+function getC4Defused($steamID, $dbh){
 	$stmt = "SELECT c4_defused FROM rankme WHERE steam = :steamID";
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
@@ -585,7 +584,7 @@ getC4Defused(){
 	return $item[0];
 }
 
-getCTWins(){
+function getCTWins($steamID, $dbh){
 	$stmt = "SELECT ct_win FROM rankme WHERE steam = :steamID";
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
@@ -594,7 +593,7 @@ getCTWins(){
 	return $item[0];
 }
 
-getTWins(){
+function getTWins($steamID, $dbh){
 	$stmt = "SELECT tr_win FROM rankme WHERE steam = :steamID";
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
@@ -603,7 +602,7 @@ getTWins(){
 	return $item[0];
 }
 
-getHostagesRescued(){
+function getHostagesRescued($steamID, $dbh){
 	$stmt = "SELECT hostages_rescued FROM rankme WHERE steam = :steamID";
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
@@ -612,7 +611,7 @@ getHostagesRescued(){
 	return $item[0];
 }
 
-getVIPKilled(){
+function getVIPKilled($steamID, $dbh){
 	$stmt = "SELECT vip_killed FROM rankme WHERE steam = :steamID";
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
@@ -621,7 +620,7 @@ getVIPKilled(){
 	return $item[0];
 }
 
-getVIPEscaped(){
+function getVIPEscaped($steamID, $dbh){
 	$stmt = "SELECT vip_escaped FROM rankme WHERE steam = :steamID";
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
@@ -630,7 +629,7 @@ getVIPEscaped(){
 	return $item[0];
 }
 
-getVIPPlayed(){
+function getVIPPlayed($steamID, $dbh){
 	$stmt = "SELECT vip_played FROM rankme WHERE steam = :steamID";
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
@@ -639,7 +638,7 @@ getVIPPlayed(){
 	return $item[0];
 }
 
-getMVP(){
+function getMVP($steamID, $dbh){
 	$stmt = "SELECT mvp FROM rankme WHERE steam = :steamID";
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
@@ -648,7 +647,7 @@ getMVP(){
 	return $item[0];
 }
 
-getDamage(){
+function getDamage($steamID, $dbh){
   	$stmt = "SELECT damage FROM rankme WHERE steam = :steamID";
   	$query = $dbh->prepare($stmt);
   	$query->bindValue(":steamID", $steamID);

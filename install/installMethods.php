@@ -6,8 +6,8 @@ try{
 
 		$headPHP = "<?php\n";
 		$tailPHP = "?>";
-		$pageTitle = "\$pageTitle = {$_POST['pageTitle']}\n";
-		$webTitle = "\$webTitle = {$_POST['browserTitle']}\n";
+		$pageTitle = "\$pageTitle = '{$_POST['pageTitle']}';\n";
+		$webTitle = "\$webTitle = '{$_POST['browserTitle']}';\n";
 
 
 		$databaseConn = "\$dbh = new PDO(\"mysql:host={$_POST['databaseIP']};dbname={$_POST['databaseName']}\", '{$_POST['databaseUser']}', '{$_POST['databasePass']}');\n";
