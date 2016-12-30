@@ -19,4 +19,5 @@
                     </div>
                     
                 </ul>
+                <footer style="position:fixed; bottom: 0; height:40px;"><center>&nbsp;Admin area <a href="admin.php">Log in</a></center></footer>
             </div>   

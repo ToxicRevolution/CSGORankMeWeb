@@ -37,11 +37,15 @@ $totalSearch = "4403"
 <div class="container" style="width:95%;">
     <div class="row">
         <div class="wrapper">
+
             <?php include_once "views/nav/index.php" ?>
    
-            <?php include_once "views/$page/index.php" ?>
+            <?php include_once "views/$page/search-results.php" ?>
+
+            <?php include_once "views/$page/search-index.php" ?>
         </div>
     </div>
 </div>
+<script src="js/search/search-ajax.js"></script>
 </body>
 </html>
