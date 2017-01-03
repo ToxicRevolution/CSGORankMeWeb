@@ -1,6 +1,6 @@
 <?php
 
-function getTotalPlayers($steamID, $dbh){
+function getTotalPlayers($dbh){
 	$stmt = "SELECT count(steam) FROM rankme";
 	$query = $dbh->prepare($stmt);
 	$query->execute();
@@ -13,8 +13,8 @@ function getLastIP($steamID, $dbh){
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
 	$query->execute();
-	$item = $query->fetch(PDO::FETCH_ASSOC);
-	return $item[0];
+	$item = $query->fetchColumn();
+	return $item;
 }
 
 function getScore($steamID, $dbh){
@@ -22,8 +22,8 @@ function getScore($steamID, $dbh){
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
 	$query->execute();
-	$item = $query->fetch(PDO::FETCH_ASSOC);
-	return $item[0];
+	$item = $query->fetchColumn();
+	return $item;
 }
 
 function getKills($steamID, $dbh){
@@ -32,7 +32,7 @@ function getKills($steamID, $dbh){
 	$query->bindValue(":steamID", $steamID);
 	$query->execute();
 	$item = $query->fetchColumn();
-	return $item[0];
+	return $item;
 }
 
 function getDeaths($steamID, $dbh){
@@ -40,8 +40,17 @@ function getDeaths($steamID, $dbh){
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
 	$query->execute();
+	$item = $query->fetchColumn();
+	return $item;
+}
+function getKD($steamID, $dbh){
+	$stmt = "SELECT kills, deaths FROM rankme WHERE steam = :steamID";
+	$query = $dbh->prepare($stmt);
+	$query->bindValue(":steamID", $steamID);
+	$query->execute();
 	$item = $query->fetch(PDO::FETCH_ASSOC);
-	return $item[0];
+	$kd = round($item['kills']/$item['deaths'], 2);
+	return $kd;
 }
 
 function getAssists($steamID, $dbh){
@@ -49,8 +58,8 @@ function getAssists($steamID, $dbh){
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
 	$query->execute();
-	$item = $query->fetch(PDO::FETCH_ASSOC);
-	return $item[0];
+	$item = $query->fetchColumn();
+	return $item;
 }
 
 function getSuicides($steamID, $dbh){
@@ -58,8 +67,8 @@ function getSuicides($steamID, $dbh){
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
 	$query->execute();
-	$item = $query->fetch(PDO::FETCH_ASSOC);
-	return $item[0];
+	$item = $query->fetchColumn();
+	return $item;
 }
 
 function getTKs($steamID, $dbh){
@@ -67,8 +76,8 @@ function getTKs($steamID, $dbh){
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
 	$query->execute();
-	$item = $query->fetch(PDO::FETCH_ASSOC);
-	return $item[0];
+	$item = $query->fetchColumn();
+	return $item;
 }
 
 function getShots($steamID, $dbh){
@@ -76,8 +85,8 @@ function getShots($steamID, $dbh){
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
 	$query->execute();
-	$item = $query->fetch(PDO::FETCH_ASSOC);
-	return $item[0];
+	$item = $query->fetchColumn();
+	return $item;
 }
 
 function getHits($steamID, $dbh){
@@ -85,8 +94,8 @@ function getHits($steamID, $dbh){
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
 	$query->execute();
-	$item = $query->fetch(PDO::FETCH_ASSOC);
-	return $item[0];
+	$item = $query->fetchColumn();
+	return $item;
 }
 
 function getHeadshots($steamID, $dbh){
@@ -94,8 +103,8 @@ function getHeadshots($steamID, $dbh){
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
 	$query->execute();
-	$item = $query->fetch(PDO::FETCH_ASSOC);
-	return $item[0];
+	$item = $query->fetchColumn();
+	return $item;
 }
 
 function getConneced($steamID, $dbh){
@@ -103,8 +112,8 @@ function getConneced($steamID, $dbh){
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
 	$query->execute();
-	$item = $query->fetch(PDO::FETCH_ASSOC);
-	return $item[0];
+	$item = $query->fetchColumn();
+	return $item;
 }
 
 function getRoundsT($steamID, $dbh){
@@ -112,8 +121,8 @@ function getRoundsT($steamID, $dbh){
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
 	$query->execute();
-	$item = $query->fetch(PDO::FETCH_ASSOC);
-	return $item[0];
+	$item = $query->fetchColumn();
+	return $item;
 }
 
 function getRoundsCT($steamID, $dbh){
@@ -121,8 +130,8 @@ function getRoundsCT($steamID, $dbh){
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
 	$query->execute();
-	$item = $query->fetch(PDO::FETCH_ASSOC);
-	return $item[0];
+	$item = $query->fetchColumn();
+	return $item;
 }
 
 function getLastConnected($steamID, $dbh){
@@ -130,8 +139,8 @@ function getLastConnected($steamID, $dbh){
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
 	$query->execute();
-	$item = $query->fetch(PDO::FETCH_ASSOC);
-	return $item[0];
+	$item = $query->fetchColumn();
+	return $item;
 }
 
 function getKnife($steamID, $dbh){
@@ -139,8 +148,8 @@ function getKnife($steamID, $dbh){
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
 	$query->execute();
-	$item = $query->fetch(PDO::FETCH_ASSOC);
-	return $item[0];
+	$item = $query->fetchColumn();
+	return $item;
 }
 
 function getGlock($steamID, $dbh){
@@ -148,8 +157,8 @@ function getGlock($steamID, $dbh){
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
 	$query->execute();
-	$item = $query->fetch(PDO::FETCH_ASSOC);
-	return $item[0];
+	$item = $query->fetchColumn();
+	return $item;
 }
 
 function getP2000($steamID, $dbh){
@@ -157,8 +166,8 @@ function getP2000($steamID, $dbh){
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
 	$query->execute();
-	$item = $query->fetch(PDO::FETCH_ASSOC);
-	return $item[0];
+	$item = $query->fetchColumn();
+	return $item;
 }
 
 function getUSPS($steamID, $dbh){
@@ -166,8 +175,8 @@ function getUSPS($steamID, $dbh){
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
 	$query->execute();
-	$item = $query->fetch(PDO::FETCH_ASSOC);
-	return $item[0];
+	$item = $query->fetchColumn();
+	return $item;
 }
 
 function getP250($steamID, $dbh){
@@ -175,8 +184,8 @@ function getP250($steamID, $dbh){
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
 	$query->execute();
-	$item = $query->fetch(PDO::FETCH_ASSOC);
-	return $item[0];
+	$item = $query->fetchColumn();
+	return $item;
 }
 
 function getDeagle($steamID, $dbh){
@@ -184,8 +193,8 @@ function getDeagle($steamID, $dbh){
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
 	$query->execute();
-	$item = $query->fetch(PDO::FETCH_ASSOC);
-	return $item[0];
+	$item = $query->fetchColumn();
+	return $item;
 }
 
 function getElite($steamID, $dbh){
@@ -193,8 +202,8 @@ function getElite($steamID, $dbh){
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
 	$query->execute();
-	$item = $query->fetch(PDO::FETCH_ASSOC);
-	return $item[0];
+	$item = $query->fetchColumn();
+	return $item;
 }
 
 function getFiveSeven($steamID, $dbh){
@@ -202,8 +211,8 @@ function getFiveSeven($steamID, $dbh){
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
 	$query->execute();
-	$item = $query->fetch(PDO::FETCH_ASSOC);
-	return $item[0];
+	$item = $query->fetchColumn();
+	return $item;
 }
 
 function getTec9($steamID, $dbh){
@@ -211,8 +220,8 @@ function getTec9($steamID, $dbh){
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
 	$query->execute();
-	$item = $query->fetch(PDO::FETCH_ASSOC);
-	return $item[0];
+	$item = $query->fetchColumn();
+	return $item;
 }
 
 function getCZ75A($steamID, $dbh){
@@ -220,8 +229,8 @@ function getCZ75A($steamID, $dbh){
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
 	$query->execute();
-	$item = $query->fetch(PDO::FETCH_ASSOC);
-	return $item[0];
+	$item = $query->fetchColumn();
+	return $item;
 }
 
 function getRevolver($steamID, $dbh){
@@ -229,8 +238,8 @@ function getRevolver($steamID, $dbh){
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
 	$query->execute();
-	$item = $query->fetch(PDO::FETCH_ASSOC);
-	return $item[0];
+	$item = $query->fetchColumn();
+	return $item;
 }
 
 function getNova($steamID, $dbh){
@@ -238,8 +247,8 @@ function getNova($steamID, $dbh){
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
 	$query->execute();
-	$item = $query->fetch(PDO::FETCH_ASSOC);
-	return $item[0];
+	$item = $query->fetchColumn();
+	return $item;
 }
 
 function getX1014($steamID, $dbh){
@@ -247,8 +256,8 @@ function getX1014($steamID, $dbh){
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
 	$query->execute();
-	$item = $query->fetch(PDO::FETCH_ASSOC);
-	return $item[0];
+	$item = $query->fetchColumn();
+	return $item;
 }
 
 function getMag7($steamID, $dbh){
@@ -256,8 +265,8 @@ function getMag7($steamID, $dbh){
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
 	$query->execute();
-	$item = $query->fetch(PDO::FETCH_ASSOC);
-	return $item[0];
+	$item = $query->fetchColumn();
+	return $item;
 }
 
 function getSawedOff($steamID, $dbh){
@@ -265,7 +274,7 @@ function getSawedOff($steamID, $dbh){
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
 	$query->execute();
-	$item = $query->fetch(PDO::FETCH_ASSOC);
+	$item = $query->fetchColumn();
 	return $iitem[0];
 }
 
@@ -274,8 +283,8 @@ function getBizon($steamID, $dbh){
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
 	$query->execute();
-	$item = $query->fetch(PDO::FETCH_ASSOC);
-	return $item[0];
+	$item = $query->fetchColumn();
+	return $item;
 }
 
 function getMac10($steamID, $dbh){
@@ -283,8 +292,8 @@ function getMac10($steamID, $dbh){
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
 	$query->execute();
-	$item = $query->fetch(PDO::FETCH_ASSOC);
-	return $item[0];
+	$item = $query->fetchColumn();
+	return $item;
 }
 
 function getMp9($steamID, $dbh){
@@ -292,8 +301,8 @@ function getMp9($steamID, $dbh){
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
 	$query->execute();
-	$item = $query->fetch(PDO::FETCH_ASSOC);
-	return $item[0];
+	$item = $query->fetchColumn();
+	return $item;
 }	
 
 function getMP7($steamID, $dbh){
@@ -301,8 +310,8 @@ function getMP7($steamID, $dbh){
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
 	$query->execute();
-	$item = $query->fetch(PDO::FETCH_ASSOC);
-	return $item[0];
+	$item = $query->fetchColumn();
+	return $item;
 }
 
 function getUMP45($steamID, $dbh){
@@ -310,8 +319,8 @@ function getUMP45($steamID, $dbh){
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
 	$query->execute();
-	$item = $query->fetch(PDO::FETCH_ASSOC);
-	return $item[0];
+	$item = $query->fetchColumn();
+	return $item;
 }
 
 function getP90($steamID, $dbh){
@@ -319,8 +328,8 @@ function getP90($steamID, $dbh){
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
 	$query->execute();
-	$item = $query->fetch(PDO::FETCH_ASSOC);
-	return $item[0];
+	$item = $query->fetchColumn();
+	return $item;
 }
 
 function getGalilar($steamID, $dbh){
@@ -328,8 +337,8 @@ function getGalilar($steamID, $dbh){
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
 	$query->execute();
-	$item = $query->fetch(PDO::FETCH_ASSOC);
-	return $item[0];
+	$item = $query->fetchColumn();
+	return $item;
 }
 
 function getAK47($steamID, $dbh){
@@ -337,8 +346,8 @@ function getAK47($steamID, $dbh){
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
 	$query->execute();
-	$item = $query->fetch(PDO::FETCH_ASSOC);
-	return $item[0];
+	$item = $query->fetchColumn();
+	return $item;
 }
 
 function getScar20($steamID, $dbh){
@@ -346,8 +355,8 @@ function getScar20($steamID, $dbh){
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
 	$query->execute();
-	$item = $query->fetch(PDO::FETCH_ASSOC);
-	return $item[0];
+	$item = $query->fetchColumn();
+	return $item;
 }
 
 function getFamas($steamID, $dbh){
@@ -355,8 +364,8 @@ function getFamas($steamID, $dbh){
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
 	$query->execute();
-	$item = $query->fetch(PDO::FETCH_ASSOC);
-	return $item[0];
+	$item = $query->fetchColumn();
+	return $item;
 }
 
 function getM4A4($steamID, $dbh){
@@ -364,8 +373,8 @@ function getM4A4($steamID, $dbh){
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
 	$query->execute();
-	$item = $query->fetch(PDO::FETCH_ASSOC);
-	return $item[0];
+	$item = $query->fetchColumn();
+	return $item;
 }
 
 function getM4a1S($steamID, $dbh){
@@ -373,8 +382,8 @@ function getM4a1S($steamID, $dbh){
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
 	$query->execute();
-	$item = $query->fetch(PDO::FETCH_ASSOC);
-	return $item[0];
+	$item = $query->fetchColumn();
+	return $item;
 }
 
 function getAug($steamID, $dbh){
@@ -382,8 +391,8 @@ function getAug($steamID, $dbh){
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
 	$query->execute();
-	$item = $query->fetch(PDO::FETCH_ASSOC);
-	return $item[0];
+	$item = $query->fetchColumn();
+	return $item;
 }
 
 function getSSG08($steamID, $dbh){
@@ -391,8 +400,8 @@ function getSSG08($steamID, $dbh){
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
 	$query->execute();
-	$item = $query->fetch(PDO::FETCH_ASSOC);
-	return $item[0];
+	$item = $query->fetchColumn();
+	return $item;
 }
 
 function getSG556($steamID, $dbh){
@@ -400,8 +409,8 @@ function getSG556($steamID, $dbh){
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
 	$query->execute();
-	$item = $query->fetch(PDO::FETCH_ASSOC);
-	return $item[0];
+	$item = $query->fetchColumn();
+	return $item;
 }
 
 function getAWP($steamID, $dbh){
@@ -409,8 +418,8 @@ function getAWP($steamID, $dbh){
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
 	$query->execute();
-	$item = $query->fetch(PDO::FETCH_ASSOC);
-	return $item[0];
+	$item = $query->fetchColumn();
+	return $item;
 }
 
 function getG3SG1($steamID, $dbh){
@@ -418,8 +427,8 @@ function getG3SG1($steamID, $dbh){
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
 	$query->execute();
-	$item = $query->fetch(PDO::FETCH_ASSOC);
-	return $item[0];
+	$item = $query->fetchColumn();
+	return $item;
 }
 
 function getm249($steamID, $dbh){
@@ -427,8 +436,8 @@ function getm249($steamID, $dbh){
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
 	$query->execute();
-	$item = $query->fetch(PDO::FETCH_ASSOC);
-	return $item[0];
+	$item = $query->fetchColumn();
+	return $item;
 }
 
 function getNegev($steamID, $dbh){
@@ -436,8 +445,8 @@ function getNegev($steamID, $dbh){
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
 	$query->execute();
-	$item = $query->fetch(PDO::FETCH_ASSOC);
-	return $item[0];
+	$item = $query->fetchColumn();
+	return $item;
 }
 
 function getHeGernade($steamID, $dbh){
@@ -445,8 +454,8 @@ function getHeGernade($steamID, $dbh){
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
 	$query->execute();
-	$item = $query->fetch(PDO::FETCH_ASSOC);
-	return $item[0];
+	$item = $query->fetchColumn();
+	return $item;
 }
 
 function getFlashBang($steamID, $dbh){
@@ -454,8 +463,8 @@ function getFlashBang($steamID, $dbh){
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
 	$query->execute();
-	$item = $query->fetch(PDO::FETCH_ASSOC);
-	return $item[0];
+	$item = $query->fetchColumn();
+	return $item;
 }
 
 function getSmokeGrenade($steamID, $dbh){
@@ -463,8 +472,8 @@ function getSmokeGrenade($steamID, $dbh){
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
 	$query->execute();
-	$item = $query->fetch(PDO::FETCH_ASSOC);
-	return $item[0];
+	$item = $query->fetchColumn();
+	return $item;
 }
 
 function getInferno($steamID, $dbh){
@@ -472,8 +481,8 @@ function getInferno($steamID, $dbh){
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
 	$query->execute();
-	$item = $query->fetch(PDO::FETCH_ASSOC);
-	return $item[0];
+	$item = $query->fetchColumn();
+	return $item;
 }
 
 function getDecoy($steamID, $dbh){
@@ -481,8 +490,8 @@ function getDecoy($steamID, $dbh){
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
 	$query->execute();
-	$item = $query->fetch(PDO::FETCH_ASSOC);
-	return $item[0];
+	$item = $query->fetchColumn();
+	return $item;
 }
 
 function getTaser($steamID, $dbh){
@@ -490,8 +499,8 @@ function getTaser($steamID, $dbh){
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
 	$query->execute();
-	$item = $query->fetch(PDO::FETCH_ASSOC);
-	return $item[0];
+	$item = $query->fetchColumn();
+	return $item;
 }
 
 function getHead($steamID, $dbh){
@@ -499,8 +508,8 @@ function getHead($steamID, $dbh){
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
 	$query->execute();
-	$item = $query->fetch(PDO::FETCH_ASSOC);
-	return $item[0];
+	$item = $query->fetchColumn();
+	return $item;
 }
 
 function getChest($steamID, $dbh){
@@ -508,8 +517,8 @@ function getChest($steamID, $dbh){
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
 	$query->execute();
-	$item = $query->fetch(PDO::FETCH_ASSOC);
-	return $item[0];
+	$item = $query->fetchColumn();
+	return $item;
 }
 
 function getStomach($steamID, $dbh){
@@ -517,8 +526,8 @@ function getStomach($steamID, $dbh){
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
 	$query->execute();
-	$item = $query->fetch(PDO::FETCH_ASSOC);
-	return $item[0];
+	$item = $query->fetchColumn();
+	return $item;
 }
 
 function getLeftArm($steamID, $dbh){
@@ -526,8 +535,8 @@ function getLeftArm($steamID, $dbh){
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
 	$query->execute();
-	$item = $query->fetch(PDO::FETCH_ASSOC);
-	return $item[0];
+	$item = $query->fetchColumn();
+	return $item;
 }
 
 function getRightArm($steamID, $dbh){
@@ -535,8 +544,8 @@ function getRightArm($steamID, $dbh){
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
 	$query->execute();
-	$item = $query->fetch(PDO::FETCH_ASSOC);
-	return $item[0];
+	$item = $query->fetchColumn();
+	return $item;
 }
 
 function getLeftLeg($steamID, $dbh){
@@ -544,8 +553,8 @@ function getLeftLeg($steamID, $dbh){
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
 	$query->execute();
-	$item = $query->fetch(PDO::FETCH_ASSOC);
-	return $item[0];
+	$item = $query->fetchColumn();
+	return $item;
 }
 
 function getRightleg($steamID, $dbh){
@@ -553,8 +562,8 @@ function getRightleg($steamID, $dbh){
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
 	$query->execute();
-	$item = $query->fetch(PDO::FETCH_ASSOC);
-	return $item[0];
+	$item = $query->fetchColumn();
+	return $item;
 }
 
 function getC4Plants($steamID, $dbh){
@@ -562,8 +571,8 @@ function getC4Plants($steamID, $dbh){
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
 	$query->execute();
-	$item = $query->fetch(PDO::FETCH_ASSOC);
-	return $item[0];
+	$item = $query->fetchColumn();
+	return $item;
 }
 
 function getC4Exploded($steamID, $dbh){
@@ -571,8 +580,8 @@ function getC4Exploded($steamID, $dbh){
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
 	$query->execute();
-	$item = $query->fetch(PDO::FETCH_ASSOC);
-	return $item[0];
+	$item = $query->fetchColumn();
+	return $item;
 }
 
 function getC4Defused($steamID, $dbh){
@@ -580,8 +589,8 @@ function getC4Defused($steamID, $dbh){
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
 	$query->execute();
-	$item = $query->fetch(PDO::FETCH_ASSOC);
-	return $item[0];
+	$item = $query->fetchColumn();
+	return $item;
 }
 
 function getCTWins($steamID, $dbh){
@@ -589,8 +598,8 @@ function getCTWins($steamID, $dbh){
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
 	$query->execute();
-	$item = $query->fetch(PDO::FETCH_ASSOC);
-	return $item[0];
+	$item = $query->fetchColumn();
+	return $item;
 }
 
 function getTWins($steamID, $dbh){
@@ -598,8 +607,8 @@ function getTWins($steamID, $dbh){
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
 	$query->execute();
-	$item = $query->fetch(PDO::FETCH_ASSOC);
-	return $item[0];
+	$item = $query->fetchColumn();
+	return $item;
 }
 
 function getHostagesRescued($steamID, $dbh){
@@ -607,8 +616,8 @@ function getHostagesRescued($steamID, $dbh){
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
 	$query->execute();
-	$item = $query->fetch(PDO::FETCH_ASSOC);
-	return $item[0];
+	$item = $query->fetchColumn();
+	return $item;
 }
 
 function getVIPKilled($steamID, $dbh){
@@ -616,8 +625,8 @@ function getVIPKilled($steamID, $dbh){
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
 	$query->execute();
-	$item = $query->fetch(PDO::FETCH_ASSOC);
-	return $item[0];
+	$item = $query->fetchColumn();
+	return $item;
 }
 
 function getVIPEscaped($steamID, $dbh){
@@ -625,8 +634,8 @@ function getVIPEscaped($steamID, $dbh){
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
 	$query->execute();
-	$item = $query->fetch(PDO::FETCH_ASSOC);
-	return $item[0];
+	$item = $query->fetchColumn();
+	return $item;
 }
 
 function getVIPPlayed($steamID, $dbh){
@@ -634,8 +643,8 @@ function getVIPPlayed($steamID, $dbh){
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
 	$query->execute();
-	$item = $query->fetch(PDO::FETCH_ASSOC);
-	return $item[0];
+	$item = $query->fetchColumn();
+	return $item;
 }
 
 function getMVP($steamID, $dbh){
@@ -643,8 +652,8 @@ function getMVP($steamID, $dbh){
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
 	$query->execute();
-	$item = $query->fetch(PDO::FETCH_ASSOC);
-	return $item[0];
+	$item = $query->fetchColumn();
+	return $item;
 }
 
 function getDamage($steamID, $dbh){
@@ -652,6 +661,43 @@ function getDamage($steamID, $dbh){
   	$query = $dbh->prepare($stmt);
   	$query->bindValue(":steamID", $steamID);
   	$query->execute();
-  	$item = $query->fetch(PDO::FETCH_ASSOC);
-  	return $item[0];
+  	$item = $query->fetchColumn();
+  	return $item;
+}
+
+function getFavoriteWeapon($steamID, $dbh){
+	$ak = getAK47($steamID, $dbh);
+	$m4a1 = getM4a1S($steamID, $dbh);
+	$m4a4 = getM4A4($steamID, $dbh);
+	$awp = getAWP($steamID, $dbh);
+	$usp = getUSPS($steamID, $dbh);
+	$p2000 = getUSPS($steamID, $dbh);
+	$glock = getGlock($steamID, $dbh);
+	$p250 = getP250($steamID, $dbh);
+	$deag = getDeagle($steamID, $dbh);
+	$fiveSeven = getFiveSeven($steamID, $dbh);
+	$tec9 = getTec9($steamID, $dbh);
+	$sg556 = getSG556($steamID, $dbh);
+	$ssg08 = getSSG08($steamID, $dbh);
+	$aug = getAug($steamID, $dbh);
+	$famas = getFamas($steamID, $dbh);
+	$galil =getGalilar($steamID, $dbh);
+	$weapon = array ('AK-47' => $ak, 'M4A1-S' => $m4a1, 'M4A4' => $m4a4, 'AWP' => $awp, 'USP-S' => $usp, 'P2000' => $p2000, 'Glock' => $glock, 'P250' => $p250, 'Desert Eagle' => $deag, 'Five Seven' => $fiveseven, 'Tec-9' => $tec9, 'SG556' => $sg556, 'SSG-08' => $ssg08, 'Aug' => $aug, 'Famas' => $famas, 'Galil' => $galil);
+	$favoriteWeapon = array_search(max($weapon), $weapon);
+	return $favoriteWeapon;
+}
+
+function generateJsonForDonut($steamID, $dbh){
+	$getHitBoxInfo = "SELECT head, chest, stomach, left_arm, right_arm, left_leg, right_leg FROM rankme WHERE steam = :steamID";
+    $query = $dbh->prepare($getHitBoxInfo);
+  	$query->bindValue(":steamID", $steamID);
+  	$query->execute();
+    $info = $query->fetch(PDO::FETCH_ASSOC);
+    echo "{\"label\": \"Head\", \"value\": \"{$info['head']}\"},";
+    echo "{\"label\": \"Chest\", \"value\": \"{$info['chest']}\"},";
+    echo "{\"label\": \"Stomach\", \"value\": \"{$info['stomach']}\"},";
+    echo "{\"label\": \"Left Arm\", \"value\": \"{$info['left_arm']}\"},";
+    echo "{\"label\": \"Right Arm\", \"value\": \"{$info['right_arm']}\"},";
+    echo "{\"label\": \"Left Leg\", \"value\": \"{$info['left_leg']}\"},";
+    echo "{\"label\": \"Right Leg\", \"value\": \"{$info['right_leg']}\"},";
 }
