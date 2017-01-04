@@ -275,7 +275,7 @@ function getSawedOff($steamID, $dbh){
 	$query->bindValue(":steamID", $steamID);
 	$query->execute();
 	$item = $query->fetchColumn();
-	return $iitem[0];
+	return $item;
 }
 
 function getBizon($steamID, $dbh){
@@ -351,7 +351,7 @@ function getAK47($steamID, $dbh){
 }
 
 function getScar20($steamID, $dbh){
-	$stmt = "SELECT sccar20 FROM rankme WHERE steam = :steamID";
+	$stmt = "SELECT scar20 FROM rankme WHERE steam = :steamID";
 	$query = $dbh->prepare($stmt);
 	$query->bindValue(":steamID", $steamID);
 	$query->execute();
@@ -665,6 +665,37 @@ function getDamage($steamID, $dbh){
   	return $item;
 }
 
+function getADR($steamID, $dbh){
+	$roundsTotal = getRoundsCT($steamID, $dbh);
+	$roundsTotal += getRoundsT($steamID, $dbh);
+	$damageTotal = getDamage($steamID, $dbh);
+	$ADR = round($damageTotal / $roundsTotal, 2);
+	return $ADR;
+}
+
+function getAccuracy($steamID, $dbh){
+	$shots = getShots($steamID, $dbh);
+    $hits = getHits($steamID, $dbh);
+    $Accuracy = ceil(($hits / $shots) * 100);
+    return $Accuracy;
+}
+
+function getHeadShotPercent($steamID, $dbh){
+	$headshots = getHeadshots($steamID, $dbh);
+	$kills = getKills($steamID, $dbh);
+
+	$hsperct = round(($headshots / $kills) * 100, 2);
+	return $hsperct;
+}
+
+function getPerctTotalKill($steamID, $weaponKills, $dbh){
+	$kills = getKills($steamID, $dbh);
+	$percentTotal = round(($weaponKills / $kills) * 100, 2);
+	return $percentTotal;
+
+
+}
+
 function getFavoriteWeapon($steamID, $dbh){
 	$ak = getAK47($steamID, $dbh);
 	$m4a1 = getM4a1S($steamID, $dbh);
@@ -700,4 +731,17 @@ function generateJsonForDonut($steamID, $dbh){
     echo "{\"label\": \"Right Arm\", \"value\": \"{$info['right_arm']}\"},";
     echo "{\"label\": \"Left Leg\", \"value\": \"{$info['left_leg']}\"},";
     echo "{\"label\": \"Right Leg\", \"value\": \"{$info['right_leg']}\"},";
+}
+
+function generateJsonForBar($steamId, $dbh){
+    $m4s = getM4A4($steamID, $dbh) + getM4a1S($steamID, $dbh);
+    $ctPistols = getUSPS($steamID, $dbh) + getP2000($steamId, $dbh);
+    echo "{\"y\": \"M4A4/M4A1-S\", \"value\": \"{$m4s}\"},";
+    echo "{\"y\": \"Ak-47\", \"value\": \"{getAK47($steamID, $dbh)}\"},";
+    echo "{\"y\": \"Awp\", \"value\": \"{getAWP($steamID, $dbh)}\"},";
+    echo "{\"y\": \"Desert Eagle\", \"value\": \"{getDeagle($steamID, $dbh)}\"},";
+    echo "{\"y\": \"USP/P2000\", \"value\": \"{$ctPistols}\"},";
+    echo "{\"y\": \"Glock\", \"value\": \"{getGlock($steamID, $dbh)}\"},";
+    echo "{\"y\": \"Tec-9\", \"value\": \"{getTec9($steamID, $dbh)}\"},";
+    echo "{\"y\": \"Five Seven\", \"value\": \"{getFiveSeven($steamID, $dbh)}\"},";
 }

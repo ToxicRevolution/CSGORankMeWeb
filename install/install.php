@@ -56,6 +56,10 @@
 		  				<td><input type="text" name="adminPass" id='installInputs' tabindex="8" required/></td>
 		  			</tr>
 		  			<tr>
+		  				<td>Server Type* <a href="#" data-toggle="tooltip" title="What is the server's main plugin/function"><i class="fa fa-question" aria-hidden="true"></i> </a> &nbsp;&nbsp;</td>
+		  				<td><select name="serverType"><option></option><option value="1v1">1v1</option><option value="DeathMatch">DeathMatch</option><option value="Comp">Compeitive</option><option value="Retake">Retake</option></select></td>
+		  			</tr>
+		  			<tr>
 		  				<td>(Optional) Sourcebans Database IP <a href="#" data-toggle="tooltip" title="If you have sourcebans installed you can use this site to display bans as well. Specify Sourcebans Database IP here."><i class="fa fa-question" aria-hidden="true"></i> </a> &nbsp;&nbsp;</td>
 		  				<td><input type="text" name="sbIP" id='installInputs' tabindex="9"/></td>
 		  			</tr>

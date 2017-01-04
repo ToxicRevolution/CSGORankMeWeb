@@ -55,5 +55,10 @@ $totalSearch = "4403"
     </div>
 </div>
 <script src="js/search/search-ajax.js"></script>
+<script>
+    $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip();   
+    });
+</script>
 </body>
 </html>

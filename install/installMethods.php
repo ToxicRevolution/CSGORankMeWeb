@@ -8,6 +8,7 @@ try{
 		$tailPHP = "?>";
 		$pageTitle = "\$pageTitle = '{$_POST['pageTitle']}';\n";
 		$webTitle = "\$webTitle = '{$_POST['browserTitle']}';\n";
+		$serverType = "\$serverType = '{$_POST['serverType']}';\n";
 
 
 		$databaseConn = "\$dbh = new PDO(\"mysql:host={$_POST['databaseIP']};dbname={$_POST['databaseName']}\", '{$_POST['databaseUser']}', '{$_POST['databasePass']}');\n";
