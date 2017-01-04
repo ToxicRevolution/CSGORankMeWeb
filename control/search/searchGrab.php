@@ -190,13 +190,13 @@ $steamID = $_POST['steamID'];
 						</table>
  
 						<div id="morris-Bar-chart"></div>
-						<?php generateJsonForBar($steamID, $dbh); ?>
                         <script>
+                          
                         	 Morris.Bar({
                         	    element: 'morris-Bar-chart',
-                        	    data: [<?php generateJsonForBar($steamID, $dbh); ?>],
+                        	    data: [<?php echo generateJsonForBar($steamID, $dbh); ?>],
                         	    xkey: 'y',
-                        	    ykeys: 'value',
+                        	    ykeys: ['value'],
                         	    labels: ['Graph']
                         	 });
                         </script>
