@@ -12,6 +12,7 @@ $steamID = $_POST['steamID'];
                 <div class="card-header">Main Stats:</div>
                     <div class="card-block">
                     	<div class='col-md-7'>
+                          <?php $obj = new Player($steamID, $dbh); ?>
                         	<p>Score: <span class="text-muted"><?php echo getScore($steamID, $dbh); ?></span></p>
                         	<p>Kills: <span class="text-muted"><?php echo getKills($steamID, $dbh); ?></span></p>
                         	<p>Deaths: <span class="text-muted"><?php echo getDeaths($steamID, $dbh); ?></span></p>
