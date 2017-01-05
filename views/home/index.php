@@ -24,7 +24,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <a href="#">
+                            <a href="search.php">
                                 <div class="card-footer">
                                     <span class="pull-left">Search A User</span>
                                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -46,7 +46,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <a href="#">
+                            <a href="leaderboards.php">
                                 <div class="card-footer">
                                     <span class="pull-left">View LeaderBoards!</span>
                                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -68,9 +68,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <a href="#">
+                            <a href="servers.php">
                                 <div class="card-footer">
-                                    <span class="pull-left">View LeaderBoards!</span>
+                                    <span class="pull-left">View Servers!</span>
                                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                     <div class="clearfix"></div>
                                 </div>
