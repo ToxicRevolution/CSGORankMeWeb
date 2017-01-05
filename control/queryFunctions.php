@@ -70,6 +70,7 @@ class Player {
 	public $vip_escaped;
 	public $vip_played;
 	public $mvp;
+	public $damage;
 
 
 	/**
@@ -144,6 +145,7 @@ class Player {
 	 * @param    $vip_escaped   
 	 * @param    $vip_played   
 	 * @param    $mvp   
+	 * @param 	 $damage
 	 */
 	 public function __construct($steamID, $dbh) {
     //Make DB Call
@@ -223,8 +225,12 @@ class Player {
 		$this->vip_escaped = $item['vip_escaped'];
 		$this->vip_played = $item['vip_played'];
 		$this->mvp = $item['mvp'];
+		$this->damage = $item['damage'];
 	}
 
+	public function get($name) {
+    	return $this->$name;
+	}
 
 }
 

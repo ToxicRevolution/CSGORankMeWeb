@@ -12,10 +12,10 @@ $steamID = $_POST['steamID'];
                 <div class="card-header">Main Stats:</div>
                     <div class="card-block">
                     	<div class='col-md-7'>
-                          <?php $obj = new Player($steamID, $dbh); ?>
-                        	<p>Score: <span class="text-muted"><?php echo getScore($steamID, $dbh); ?></span></p>
-                        	<p>Kills: <span class="text-muted"><?php echo getKills($steamID, $dbh); ?></span></p>
-                        	<p>Deaths: <span class="text-muted"><?php echo getDeaths($steamID, $dbh); ?></span></p>
+                          <?php $player = new Player($steamID, $dbh); ?>
+                        	<p>Score: <span class="text-muted"><?php echo $player->get("score"); ?></span></p>
+                        	<p>Kills: <span class="text-muted"><?php echo $player->get("kills"); ?></span></p>
+                        	<p>Deaths: <span class="text-muted"><?php echo $player->get("deaths"); ?></span></p>
                         	<p>K/D: <span class="text-muted"><?php echo getKD($steamID, $dbh); ?></span></p>
                         	<p data-toggle="tooltip"  title="Average Death Per Round">ADR <span class="text-muted"><?php echo getADR($steamID, $dbh); ?></span></p>
                         	<p>HS % <span class="text-muted"><?php echo getHeadShotPercent($steamID, $dbh); ?></span></p>
