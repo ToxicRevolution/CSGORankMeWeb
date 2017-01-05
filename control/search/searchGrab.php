@@ -68,7 +68,7 @@ $steamID = $_POST['steamID'];
                            console.log(colors_array);
 
                           }
-                          graphDonut("#a44545|#933e3e|#833737|#723030|#622929|#522222|#411b1b")
+                          graphDonut("#ff4d4d|#ff3333|#ff1a1a|#ff0000|#e60000|#cc0000|#b30000")
                         	</script>
                         <!-- /.panel-body -->
                     </div>
@@ -208,15 +208,15 @@ $steamID = $_POST['steamID'];
                         	    ykeys: ['value'],
                         	    labels: ['Graph'],
                               barColors: function (row, series, type){
-                                if(row.label == "M4A4/M4A1-S") return "#a44545";
-                                else if(row.label == "AK-47") return "#933e3e";
-                                else if(row.label == "Awp") return "#833737";
-                                else if(row.label == "deagle") return "#723030";
-                                else if(row.label == "Desert Eagle") return "#622929";
-                                else if(row.label == "USP/P2000") return "#522222";
-                                else if(row.label == "Glock") return "#411b1b";
-                                else if(row.label == "Tec-9") return "#311414";
-                                else if(row.label == "Five Seven") return "#200d0d";
+                                if(row.label == "M4A4/M4A1-S") return "#ff4d4d";
+                                else if(row.label == "AK-47") return "#ff3333";
+                                else if(row.label == "Awp") return "#ff1a1a";
+                                else if(row.label == "deagle") return "#ff0000";
+                                else if(row.label == "Desert Eagle") return "#e60000";
+                                else if(row.label == "USP/P2000") return "#cc0000";
+                                else if(row.label == "Glock") return "#b30000";
+                                else if(row.label == "Tec-9") return "#990000";
+                                else if(row.label == "Five Seven") return "#800000";
                               }
                         	 });
                         </script>

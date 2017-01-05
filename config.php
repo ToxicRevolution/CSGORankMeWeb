@@ -1,5 +1,6 @@
 <?php
 require_once("control/queryFunctions.php");
+require_once("control/class.Player.php");
 
 $pageTitle = 'DmFrenzy';
 $webTitle = 'DMFrenzy';

@@ -48,7 +48,7 @@ $totalSearch = "4403"
 
             <?php include_once "views/$page/search-index.php" ?>
    
-            <?php include_once "views/$page/search-results.php" ?>
+            <div class="display-search"></div>
 
 
         </div>

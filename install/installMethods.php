@@ -6,6 +6,9 @@ try{
 
 		$headPHP = "<?php\n";
 		$tailPHP = "?>";
+		$requireStatements = "require_once(\"control/queryFunctions.php\");\nrequire_once(\"control/class.Player.php\");";
+
+
 		$pageTitle = "\$pageTitle = '{$_POST['pageTitle']}';\n";
 		$webTitle = "\$webTitle = '{$_POST['browserTitle']}';\n";
 		$serverType = "\$serverType = '{$_POST['serverType']}';\n";
@@ -14,6 +17,7 @@ try{
 		$databaseConn = "\$dbh = new PDO(\"mysql:host={$_POST['databaseIP']};dbname={$_POST['databaseName']}\", '{$_POST['databaseUser']}', '{$_POST['databasePass']}');\n";
 
 		fwrite($fileMain, $headPHP);
+		fwrite($fileMain, $requireStatements);
 		fwrite($fileMain, $pageTitle);
 		fwrite($fileMain, $webTitle);
 		fwrite($fileMain, $databaseConn);
