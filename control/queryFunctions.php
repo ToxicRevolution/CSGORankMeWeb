@@ -1,4 +1,11 @@
 <?php
+function getAllSteamIDs($dbh){
+	$stmt = "SELECT steam FROM rankme";
+	$query = $dbh->prepare($stmt);
+	$query->execute();
+	$items = $query->fetchAll(PDO::FETCH_ASSOC);
+	return $items;
+}
 
 function getTotalPlayers($dbh){
 	$stmt = "SELECT count(steam) FROM rankme";

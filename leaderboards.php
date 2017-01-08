@@ -24,6 +24,8 @@ $totalSearch = "4403"
     <script src="js/bootstrap/bootstrap.min.js"></script>
     <!-- Custom JS -->
     <script src="js/Navjs.js"></script>
+    <script src="js/paging.js"></script>
+    <script src="js/leaderboard/leaderboardFunctions.js"></script>
     <!-- End Of JS -->
 
     <!-- Bootstrap 4, Tether, Fontawesome -->
@@ -43,5 +45,6 @@ $totalSearch = "4403"
         </div>
     </div>
 </div>
+
 </body>
 </html>
