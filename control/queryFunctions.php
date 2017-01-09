@@ -111,3 +111,90 @@ function generateJsonForBar($player){
     $display .= (string) "{y: 'Five Seven', value: {$fiveseven}}";
     return (string) $display;
 }
+
+function getWeaponName($weapon){
+	switch($weapon){
+		case "m4a1_silencer":
+			return "M4A1-S";
+		case "m4a1";
+			return "M4A4";
+		case "ak47":
+			return "Ak-47";
+		case "famas":
+			return "Famas";
+		case "galilar":
+			return "Galil";
+		case "sg556":
+			return "SG556";
+		case "aug":
+			return "AUG";
+		case "awp":
+			return "AWP";
+		case "scar20":
+			return "Scar-20";
+		case "g3sg1":
+			return "G3SG1";
+		case "ssg08":
+			return "SSG-08";
+		case "nova":
+			return "Nova";
+		case "xm1014":
+			return "XM-1014";
+		case "mag7":
+			return "Mag-7";
+		case "sawedoff":
+			return "Sawed Off";
+		case "m249":
+			return "M-249";
+		case "negev":
+			return "Negev";
+		case "knife":
+			return "knife";
+		case "p250":
+			return "P-250";
+		case "glock":
+			return "Glock";
+		case "usp_silencer":
+			return "USP-S";
+		case "hkp2000":
+			return "P2000";
+		case "fiveseven":
+			return "Five Seven";
+		case "tec9":
+			return "Tec-9";
+		case "elite":
+			return "Dual Berettas";
+		case "revolver":
+			return "Revolver";
+		case "deagle":
+			return "Desert Eagle";
+		case "cz75a":
+			return "CZ-75a";
+		case "bizon":
+			return "PP Bizon";
+		case "mp9":
+			return "MP-9";
+		case "mp7":
+			return "MP-7";
+		case "p90":
+			return "P90";
+		case "ump45":
+			return "UMP-45";
+		case "mac10":
+			return "Mac-10";
+		case "hegrenade":
+			return "HE Grenade";
+		case "flashbang":
+			return "Flash Bang";
+		case "smokegrenade":
+			return "Smoke Grenade";
+		case "decoy":
+			return "Decoy Grenade";
+		case "inferno":
+			return "Incendiary/Molotov Grenade";
+		case "taser":
+			return "Taser";
+		default:
+			return "<!-- ERROR WITH COLUMN {$weapon} -->";
+	}
+}

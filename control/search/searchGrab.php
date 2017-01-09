@@ -89,113 +89,20 @@ $steamID = $_POST['steamID'];
   							  </tr>
   							</thead>
   							<tbody>
-  							  <tr>
-  							    <th scope="row"><i class="fa fa-crosshairs" aria-hidden="true"></i></th>
-  							    <td>AWP</td>
-  							    <td><?php $total = $player->get("awp"); echo $total; ?></td>
-  							    <td><?php echo getPerctTotalKill($player, $total);?> %</td>
-  							  </tr>
-  							  <tr>
-  							    <th scope="row"><i class="fa fa-crosshairs" aria-hidden="true"></i></th>
-  							    <td>AK-47</td>
-  							    <td><?php $total = $player->get("ak47"); echo $total;?></td>
-  							    <td><?php echo getPerctTotalKill($player, $total);?> %</td>
-  							  </tr>
-  							  <tr>
-  							    <th scope="row"><i class="fa fa-crosshairs" aria-hidden="true"></i></th>
-  							    <td>M4A4/M4A1-S</td>
-  							    <td><?php $total = $player->get("m4a1") + $player->get("m4a1_silencer"); echo $total; ?></td>
-  							    <td><?php echo getPerctTotalKill($player, $total);?> %</td>
-  							  </tr>
-  							  <tr>
-  							    <th scope="row"><i class="fa fa-crosshairs" aria-hidden="true"></i></th>
-  							    <td>P2000/USP-S</td>
-  							    <td><?php $total = $player->get("hkp2000") + $player->get("usp_silencer"); echo $total; ?></td>
-  							    <td><?php echo getPerctTotalKill($player, $total);?> %</td>
-  							  </tr>
-  							  <tr>
-  							    <th scope="row"><i class="fa fa-crosshairs" aria-hidden="true"></i></th>
-  							    <td>Glock</td>
-  							    <td><?php $total = $player->get("glock"); echo $total; ?></td>
-  							    <td><?php echo getPerctTotalKill($player, $total);?> %</td>
-  							  </tr>
-  							  <tr>
-  							    <th scope="row"><i class="fa fa-crosshairs" aria-hidden="true"></i></th>
-  							    <td>Tec-9</td>
-  							    <td><?php $total = $player->get("tec9"); echo $total; ?></td>
-  							    <td><?php echo getPerctTotalKill($player, $total);?> %</td>
-  							  </tr>
-  							  <tr>
-  							    <th scope="row"><i class="fa fa-crosshairs" aria-hidden="true"></i></th>
-  							    <td>Five Seven</td>
-  							    <td><?php $total = $player->get("fiveseven"); echo $total; ?></td>
-  							    <td><?php echo getPerctTotalKill($player, $total);?> %</td>
-  							  </tr>
-  							  <tr>
-  							    <th scope="row"><i class="fa fa-crosshairs" aria-hidden="true"></i></th>
-  							    <td>Desert Eagle</td>
-  							    <td><?php $total = $player->get("deagle"); echo $total; ?></td>
-  							    <td><?php echo getPerctTotalKill($player, $total);?> %</td>
-  							  </tr>
-  							  <tr>
-  							    <th scope="row"><i class="fa fa-crosshairs" aria-hidden="true"></i></th>
-  							    <td>Revolver</td>
-  							    <td><?php $total = $player->get("revolver"); echo $total; ?></td>
-  							    <td><?php echo getPerctTotalKill($player, $total);?> %</td>
-  							  </tr>
-  							  <tr>
-  							    <th scope="row"><i class="fa fa-crosshairs" aria-hidden="true"></i></th>
-  							    <td>CZ-75A</td>
-  							    <td><?php $total = $player->get("cz75a"); echo $total; ?></td>
-  							    <td><?php echo getPerctTotalKill($player, $total);?> %</td>
-  							  </tr>
-  							  <tr>
-  							    <th scope="row"><i class="fa fa-crosshairs" aria-hidden="true"></i></th>
-  							    <td>Dual Berettas</td>
-  							    <td><?php $total = $player->get("elite"); echo $total; ?></td>
-  							    <td><?php echo getPerctTotalKill($player, $total);?> %</td>
-  							  </tr>
-  							  <tr>
-  							    <th scope="row"><i class="fa fa-crosshairs" aria-hidden="true"></i></th>
-  							    <td>Famas</td>
-  							    <td><?php $total = $player->get("famas"); echo $total;?></td>
-  							    <td><?php echo getPerctTotalKill($player, $total);?> %</td>
-  							  </tr>
-  							  <tr>
-  							    <th scope="row"><i class="fa fa-crosshairs" aria-hidden="true"></i></th>
-  							    <td>Galil</td>
-  							    <td><?php $total = $player->get("galilar"); echo $total; ?></td>
-  							    <td><?php echo getPerctTotalKill($player, $total);?> %</td>
-  							  </tr>
-  							  <tr>
-  							    <th scope="row"><i class="fa fa-crosshairs" aria-hidden="true"></i></th>
-  							    <td>Aug</td>
-  							    <td><?php $total = $player->get("aug"); echo $total; ?></td>
-  							    <td><?php echo getPerctTotalKill($player, $total);?> %</td>
-  							  </tr>
-  							  <tr>
-  							    <th scope="row"><i class="fa fa-crosshairs" aria-hidden="true"></i></th>
-  							    <td>SG 556</td>
-  							    <td><?php $total = $player->get("sg556"); echo $total; ?></td>
-  							    <td><?php echo getPerctTotalKill($player, $total);?> %</td>
-  							  </tr>
-  							  <tr>
-  							    <th scope="row"><i class="fa fa-crosshairs" aria-hidden="true"></i></th>
-  							    <td>Scout (SSG 08)</td>
-  							    <td><?php $total = $player->get("ssg08"); echo $total; ?></td>
-  							    <td><?php echo getPerctTotalKill($player, $total);?> %</td>
-  							  </tr>
-  							  <tr>
-  							    <th scope="row"><i class="fa fa-crosshairs" aria-hidden="true"></i></th>
-  							    <td>Knife</td>
-  							    <td><?php $total = $player->get("knife"); echo $total; ?></td>
-  							    <td><?php echo getPerctTotalKill($player, $total);?> %</td>
-  							  </tr>
-  							  <?php 
-  							  if($serverType != "1v1")
-  							  	require_once("searchTableAll.php");
-  							  ?>
-  							</tbody>
+                <?php
+                  foreach($weaponsArray as $weapon){
+                  echo "<tr>";
+                    echo "<th scope='row'><i class='fa fa-crosshairs' aria-hidden='true'></i></th>";
+                    $weaponName = getWeaponName($weapon);
+                    echo "<td> {$weaponName}</td>";
+                    $total = $player->get($weapon);
+                    echo "<td>{$total}</td>";
+                    $percentKill = getPerctTotalKill($player, $total);
+                    echo "<td> {$percentKill} %</td>";
+                  echo "</tr>";
+                  }
+                ?>
+  						  </tbody>
 						</table>
  
 						<div id="morris-Bar-chart"></div>

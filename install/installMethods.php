@@ -1,25 +1,29 @@
 <?php 
 try{
 
-		require_once("../config.php");
-		$array = $_POST['check'];
-		var_dump($array);
-		$player = new Player("test", $dbh);
-		foreach($array as $item){
-			echo "{$item} ";
-			echo $player->get($item) . "<br>";
-		}
 
-		/*require_once('../Bcrypt.php');
+
+		require_once('../Bcrypt.php');
 
 		$fileMain = fopen("../config.php", "w");
-
+		$itemsArray = "";
+		$commaFlag = 0;
 		$headPHP = "<?php\n";
 		$tailPHP = "?>";
-		$requireStatements = "require_once(\"control/queryFunctions.php\");\nrequire_once(\"control/class.Player.php\");";
+		$requireStatements = "require_once(\"control/queryFunctions.php\");\nrequire_once(\"control/class.Player.php\");\n";
 
 
 		$pageTitle = "\$pageTitle = '{$_POST['pageTitle']}';\n";
+		$array = $_POST['check'];
+		foreach($array as $item){
+		if($commaFlag > 0){
+			$itemsArray .= ",";
+		}
+		$commaFlag++;
+		$itemsArray .= "\"{$item}\"";
+
+		}
+		$array = "\$weaponsArray = array({$itemsArray});\n";
 		$webTitle = "\$webTitle = '{$_POST['browserTitle']}';\n";
 		$serverType = "\$serverType = '{$_POST['serverType']}';\n";
 
@@ -29,6 +33,7 @@ try{
 		fwrite($fileMain, $headPHP);
 		fwrite($fileMain, $requireStatements);
 		fwrite($fileMain, $pageTitle);
+		fwrite($fileMain, $array);
 		fwrite($fileMain, $webTitle);
 		fwrite($fileMain, $databaseConn);
 		fwrite($fileMain, $tailPHP);
@@ -65,7 +70,7 @@ try{
 		$stmt->bindValue(":email", $_POST['adminEmail']);
 		$stmt->bindValue(":Password", $hash);
 		$stmt->execute();
-*/
+
 		echo "<h1>Success! You can now delete the install folder, please note that you must delete it before you can use the site!</h1>";
 } catch(PDOException $e) {
     echo $e->getMessage();
