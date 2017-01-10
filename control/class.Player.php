@@ -1,5 +1,7 @@
 <?php
 class Player {
+	public $steam;
+	public $name;
 	public $lastIP;
 	public $score;
 	public $kills;
@@ -76,6 +78,8 @@ class Player {
 
 	/**
 	 * Class Constructor
+	 * @param 	 $steam
+	 * @param    $name
 	 * @param    $lastIP   
 	 * @param    $score   
 	 * @param    $kills   
@@ -157,6 +161,8 @@ class Player {
 	    $query->execute();
 	    $item = $query->fetch(PDO::FETCH_ASSOC);
 	    
+	    $this->steam = $item['steam'];
+	    $this->name = $item['name'];
 	    $this->lastIP = $item['lastip'];
 		$this->score = $item['score'];
 		$this->kills = $item['kills'];

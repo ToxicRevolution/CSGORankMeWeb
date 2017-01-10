@@ -16,8 +16,11 @@ function getTotalPlayers($dbh){
 }
 
 function getKD($player){
-
-	$kd = round($player->get("kills")/$player->get('deaths'), 2);
+	$deaths = $player->get('deaths');
+	if($deaths == 0){
+		$deaths = 1;
+	}
+	$kd = round($player->get("kills")/$deaths, 2);
 	return $kd;
 }
 

@@ -1,6 +1,10 @@
 <?php
-require_once("../../config.php");
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+require_once("config.php");
 $items = getAllSteamIDs($dbh);
+
 echo "<table class='table table-striped table-inverse table-bordered table-hover' table_Dynamic>";
 echo "<tr>";
 echo "<th></th>";
@@ -12,9 +16,15 @@ echo "<th>K/D</th>";
 echo "</tr>";
 echo "<tbody id='leaderboardTable' class='leaderboardTable'>";
 foreach ($items as $item){
-	$player = new Player($steamID, $dbh);
+	$player = new Player($item['steam'], $dbh);
 	echo "<tr>";
-	echo "";
-}
+	echo "<td><i class='fa fa-crosshairs' aria-hidden='true'></i></td>";
+	echo "<td>" . $player->get("name") . "</td>";
+	echo "<td>" . $player->get("steam") . "</td>";
+	echo "<td>" . $player->get("score") . "</td>";
+	echo "<td>" . getKD($player) . "</td>";
+	echo "</tr>";
+} 
+echo "</tbody>\n</table>";
 
 ?>
