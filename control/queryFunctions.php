@@ -1,6 +1,6 @@
 <?php
 function getAllSteamIDs($dbh){
-	$stmt = "SELECT steam FROM rankme";
+	$stmt = "SELECT steam FROM rankme WHERE score > 0";
 	$query = $dbh->prepare($stmt);
 	$query->execute();
 	$items = $query->fetchAll(PDO::FETCH_ASSOC);
