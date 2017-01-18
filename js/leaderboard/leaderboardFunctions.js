@@ -5,7 +5,9 @@ $(document).ready(function() {
 		data: 'null=null',
 	}).done(function(d){
 		$('#loadArea').html(d);
-		$('#LeaderBoardTable').DataTable();
+		$('#LeaderBoardTable').DataTable({
+			"order": [[3, "desc"]]
+		});
 	});
 
 });
