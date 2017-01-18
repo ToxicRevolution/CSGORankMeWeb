@@ -2,7 +2,7 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-require_once("config.php");
+require_once("../../config.php");
 $items = getAllSteamIDs($dbh);
 
 echo "<table class='table table-striped table-inverse table-bordered table-hover' id='LeaderBoardTable' table_Dynamic >";

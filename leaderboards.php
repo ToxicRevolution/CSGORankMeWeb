@@ -20,6 +20,7 @@ $totalSearch = "4403"
     <!-- Latest compiled and minified Jquery JavaScript -->
     <script src="js/jquery.min.js"></script>
     <script src="js/DataTable/jqueryDataTables.js"></script>
+    <script src="js/DataTable/dataTables.bootstrap4.min.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
     <script src="js/leaderboard/leaderboardFunctions.js"></script>
     <!-- Bootstrap 4 and Tether -->
@@ -32,7 +33,7 @@ $totalSearch = "4403"
     <!-- End Of JS -->
 
     <!-- Bootstrap 4, Tether, Fontawesome -->
-    <link rel="stylesheet" href="css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="css/DataTable/dataTables.bootstrap4.css">
     <link rel="stylesheet" href="css/tether/tether.min.css">
     <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="css/fontawesome/font-awesome.min.css">
