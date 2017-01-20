@@ -1,13 +1,9 @@
 <?php
+session_start();
 /*
 Fill in phpVariables with values from Database later.
 */
-$webTitle = "RankMe || DMFrenzy";
-$pageTitle = "DMFrenzy Servers";
-$serverName = "DMFrenzy";
-$totalUsers = "6332";
-$totalServers = "34";
-$totalSearch = "4403"
+require_once("config.php");
 ?>
 <html>
 <head>
@@ -37,10 +33,12 @@ $totalSearch = "4403"
     <link rel="stylesheet" href="css/tether/tether.min.css">
     <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="css/fontawesome/font-awesome.min.css">
+    <link rel="stylesheet" href="css/social.css">
     <!-- Custom CSS --> 
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+<?php include_once "views/social.php" ?>
 <div class="container" style="width:95%;">
     <div class="row">
         <div class="wrapper">

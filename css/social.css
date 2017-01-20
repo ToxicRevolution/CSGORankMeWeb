@@ -1,0 +1,100 @@
+#fixedsocial {
+    top:30%;
+    height:200px;
+    width:60px;
+    position:fixed;
+    right: 0;
+}
+
+.facebookflat {
+    background-color: #1E90FF;
+    height:50px;
+    width:50px;
+   transition:ease 500ms;
+    background-size:50px;
+    opacity:1;
+}
+
+.facebookflat:hover {
+    background-color: #0080ff;
+    height:50px;
+    width:50px;
+    background-size:60px;
+    opacity:0.5;
+    transition:ease 500ms;
+    margin-left:-20px;
+    width:70px;
+
+}
+
+.facebookflat a {
+    color: #F0FFFF;
+}
+
+.twitterflat {
+    background-color: #66b3ff;
+    height:50px;
+    width:50px;
+    transition:ease 500ms;
+    background-size:50px;
+    opacity:1;
+}
+
+.twitterflat:hover {
+    background-color: #3399ff;
+    height:50px;
+    width:50px;
+    background-size:60px;
+    opacity:0.5;
+    transition:ease 500ms;
+    margin-left:-20px;
+    width:70px;
+}
+.twitterflat a {
+    color: #F0FFFF;
+}
+.twitchflat {
+    background-color: #9932cc;
+    height:50px;
+    width:50px;
+    transition:ease 500ms;
+    background-size:50px;
+    opacity:1;
+}
+
+.twitchflat:hover {
+    background-color: #7b28a4;
+    height:50px;
+    width:50px;
+    background-size:60px;
+    opacity:0.5;
+    transition:ease 500ms;
+    margin-left:-20px;
+    width:70px;
+}
+.twitchflat a {
+    color: #F0FFFF;
+}
+
+.steamflat {
+    background-color: #666666;
+    height:50px;
+    width:50px;
+    transition:ease 500ms;
+    background-size:50px;
+    opacity:1;
+}
+
+.steamflat:hover {
+    background-color: #4d4d4d;
+    height:50px;
+    width:50px;
+    background-size:60px;
+    opacity:0.5;
+    transition:ease 500ms;
+    margin-left:-20px;
+    width:70px;
+}
+.steamflat a {
+    color: #F0FFFF;
+}

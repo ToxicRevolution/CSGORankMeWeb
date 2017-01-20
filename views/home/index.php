@@ -19,8 +19,8 @@
                                         <i class="fa fa-search fa-5x"></i>
                                     </div>
                                     <div class="col-xs-9 text-xs-right">
-                                        <div class="huge"><b><?php echo $totalSearch; ?></b></div>
-                                        <div><b>Total Searches</b></div>
+                                        <div class="huge"><b>Search for any player!</b></div>
+                                        <div><b>See all stats about that player!</b></div>
                                     </div>
                                 </div>
                             </div>
@@ -41,7 +41,7 @@
                                         <i class="fa fa-user fa-5x"></i>
                                     </div>
                                     <div class="col-xs-9 text-xs-right">
-                                        <div class="huge"><b><?php echo $totalUsers; ?></b></div>
+                                        <div class="huge"><b><?php echo getTotalPlayers($dbh); ?></b></div>
                                         <div><b>Total Users!</b></div>
                                     </div>
                                 </div>

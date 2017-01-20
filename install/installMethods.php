@@ -62,6 +62,16 @@ try{
 		) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;";
 		$stmt = $dbh->prepare($createAdminDB);
 		$stmt->execute();
+		$createServersDB = "CREATE TABLE IF NOT EXISTS `servers` (
+		  `id` int(11) NOT NULL AUTO_INCREMENT,
+		  `serverIP` varchar(128) NOT NULL,
+		  `serverPort` varchar(128) NOT NULL,
+		  `serverName` varchar(512) NOT NULL,
+		  `serverPass` varchar(256) NOT NULL,
+		  PRIMARY KEY (`id`)
+		) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;";
+		$stmt = $dbh->prepare($createServersDB);
+		$stmt->execute();
 
 		$hash = Bcrypt::hashPassword($_POST['adminPass']);
 

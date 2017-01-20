@@ -1,7 +1,7 @@
             <div class="side-bar">
                 <ul>
                     <li class="menu-head">
-                        <?php echo $pageTitle; ?> <a href="#" class="push_menu"><span class="fa fa-reorder pull-right"></span></a>
+                        <b><?php echo $pageTitle; ?></b> <a href="#" class="push_menu"><span class="fa fa-reorder pull-right"></span></a>
                     </li>
                     <div class="menu">
                         <li>
@@ -16,8 +16,19 @@
                         <li>
                             <a href="servers.php" class="<?php if($page =='servers'){echo 'active';}?>">Servers <span class="fa fa-server pull-right"></span></a>
                         </li>
+                        <?php 
+                        if(isset($_SESSION['sess_user_id'])){
+                            echo "<li>";
+                            if($page == 'admin'){
+                                echo "<a href='admin.php' class='active'>Admin Area <span class='fa fa-terminal pull-right'></span></a>";
+                            }else{
+                                echo "<a href='admin.php'>Admin Area <span class='fa fa-terminal pull-right'></span></a>";
+                            }
+                            echo "</li>";
+                        }
+                        ?>
                     </div>
                     
                 </ul>
-                <footer style="position:fixed; bottom: 0; height:40px;"><center>&nbsp;Admin area <a href="admin.php">Log in</a></center></footer>
+                <footer style="position:fixed; bottom: 0; height:40px;"><center>&nbsp;Admin area <a href="login.php">Log in</a></center></footer>
             </div>   

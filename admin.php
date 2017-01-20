@@ -1,14 +1,14 @@
 <?php
-session_start();
 /*
 Fill in phpVariables with values from Database later.
 */
+session_start();
 require_once("config.php");
 ?>
 <html>
 <head>
     <title> <?php echo $webTitle; ?> </title>
-    <?php $page = "home" //setting page for include ?>
+    <?php $page = "admin" //setting page for include ?>
     <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -26,9 +26,9 @@ require_once("config.php");
     <link rel="stylesheet" href="css/tether/tether.min.css">
     <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="css/fontawesome/font-awesome.min.css">
+    <link rel="stylesheet" href="css/social.css">
     <!-- Custom CSS --> 
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/social.css">
 </head>
 <body>
 <?php include_once "views/social.php" ?>
