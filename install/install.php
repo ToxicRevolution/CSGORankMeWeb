@@ -139,20 +139,13 @@
 
 		  			</tr>
 		  			<tr>
-		  				<td>(Optional) Sourcebans Database IP <a href="#" data-toggle="tooltip" title="If you have sourcebans installed you can use this site to display bans as well. Specify Sourcebans Database IP here."><i class="fa fa-question" aria-hidden="true"></i> </a> &nbsp;&nbsp;</td>
-		  				<td><input type="text" name="sbIP" id='installInputs' tabindex="9"/></td>
+		  				<td>(Optional) Website URL <a href="#" data-toggle="tooltip" title="If you would like to link your website you can do so by entering the URL here."><i class="fa fa-question" aria-hidden="true"></i> </a> &nbsp;&nbsp;</td>
+		  				<td><input type="text" name="webURL" id='installInputs' tabindex="9"/></td>
 		  			</tr>
+
 		  			<tr>
-		  				<td>(Optional) Sourcebans Database Name <a href="#" data-toggle="tooltip" title="Specify Sourcebans Database name here."><i class="fa fa-question" aria-hidden="true"></i> </a> &nbsp;&nbsp;</td>
-		  				<td><input type="text" name="sbName" id='installInputs' tabindex="10"/></td>
-		  			</tr>
-		  			<tr>
-		  				<td>(Optional) Sourcebans Database UserName <a href="#" data-toggle="tooltip" title="Specify username for sourcebans database."><i class="fa fa-question" aria-hidden="true"></i> </a> &nbsp;&nbsp;</td>
-		  				<td><input type="text" name="sbUser" id='installInputs' tabindex="11"/></td>
-		  			</tr>
-		  			<tr>
-		  				<td>(Optional) Sourcebans Database Password <a href="#" data-toggle="tooltip" title="Specify password for sourcebans database."><i class="fa fa-question" aria-hidden="true"></i> </a> &nbsp;&nbsp;</td>
-		  				<td><input type="text" name="sbPass" id='installInputs' tabindex="12"/></td>
+		  				<td>(Optional) Sourcebans Website URL <a href="#" data-toggle="tooltip" title="If you have a sourcebans website you can add the url here and it will be linked to from the rank me site."><i class="fa fa-question" aria-hidden="true"></i> </a> &nbsp;&nbsp;</td>
+		  				<td><input type="text" name="sbURL" id='installInputs' tabindex="11"/></td>
 		  			</tr>
 
 		  		</table>

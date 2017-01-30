@@ -16,7 +16,16 @@
                         <li>
                             <a href="servers.php" class="<?php if($page =='servers'){echo 'active';}?>">Servers <span class="fa fa-server pull-right"></span></a>
                         </li>
-                        <?php 
+                        <?php
+                        if(isset($webURL)){
+                            echo "<li>";
+                            echo "<a href='{$webURL}'>Our Website <span class='fa fa-share pull-right'></span></a>";
+                            echo "</li>";
+                        }if(isset($sbURL)){
+                            echo "<li>";
+                            echo "<a href='{$sbURL}'>SourceBans <span class='fa fa-ban pull-right'></span></a>";
+                            echo "</li>";
+                        } 
                         if(isset($_SESSION['sess_user_id'])){
                             echo "<li>";
                             if($page == 'admin'){

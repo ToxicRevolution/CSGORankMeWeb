@@ -9,7 +9,6 @@ require_once("config.php");
 <head>
     <title> <?php echo $webTitle; ?> </title>
     <?php $page = "leaderboards" //setting page for include ?>
-    <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Calling JS -->

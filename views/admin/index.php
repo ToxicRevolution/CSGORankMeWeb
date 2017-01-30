@@ -33,7 +33,7 @@
                    		 			<div class="input-group">
                                                 <span class="input-group-addon" id="basic-addon1">Server IP*</span>
                                                 <input type="text" class="form-control" id="serverIP" name="serverIP" placeholder="Server IP" aria-describedby="basic-addon1" required>
-                   		 			</div>
+                   		 			                    </div>
                                                 <div class="input-group">
                                                 <span class="input-group-addon" id="basic-addon2">Server Port*</span>
                                                 <input type="text" class="form-control" id="serverPort" name="serverPort" value="27015" aria-describedby="basic-addon2" required>
@@ -41,10 +41,6 @@
                                                 <div class="input-group">
                                                 <span class="input-group-addon" id="basic-addon3">Server Name*</span>
                                                 <input type="text" class="form-control" id="serverName" name="serverName" placeholder="Server Name" aria-describedby="basic-addon3" required>
-                                                </div>
-                                                <div class="input-group">
-                                                <span class="input-group-addon" id="basic-addon4">Server Rcon</span>
-                                                <input type="text" class="form-control" id="serverRcon" placeholder="Rcon Password" name="serverRcon" aria-describedby="basic-addon3">
                                                 </div>
                                                 <input type="submit" class="btn btn-outline-danger" name="submit">
                    		 			</form>
@@ -89,7 +85,42 @@
                        </div>
               </div>
               </div>
-              <div role="tabpanel" class="tab-pane fade" id="manageServers">test</div>
+              <div role="tabpanel" class="tab-pane fade" id="manageServers">
+              <div class="card">
+                  <div class="card-header">Edit server Information!</div>
+                      <div class="card-block">
+                               If you change your server type and want to edit the name or move it to a new IP or port you can edit all that information here!                         
+                               <div class="row">
+                                    <div class="col-md-6" style="float: none; margin:0 auto;">
+                                          <div class="input-group">
+                                            <form action="control/admin/editServer.php" method="POST" id="editServer" >
+                                              <div class="input-group">
+                                              <span class="input-group-addon" id="basic-addon1">Server To Edit*</span>
+                                              <select class="form-control" id="serverID" name="serverID" aria-describedby="basic-addon1" required><option></option>
+                                              <?php
+                                               require_once("control/admin/getServers.php"); 
+                                              ?>
+                                              </select>
+                                              </div>
+                                              <div class="input-group">
+                                              <span class="input-group-addon" id="basic-addon2">Server IP*</span>
+                                              <input type="text" class="form-control" id="serverIP" name="serverIP" placeholder="Server IP" aria-describedby="basic-addon2" required>
+                                              </div>
+                                              <div class="input-group">
+                                              <span class="input-group-addon" id="basic-addon3">Server Port*</span>
+                                              <input type="text" class="form-control" id="serverPort" name="serverPort" value="27015" aria-describedby="basic-addon3" required>
+                                              </div>
+                                              <div class="input-group">
+                                              <span class="input-group-addon" id="basic-addon4">Server Name*</span>
+                                              <input type="text" class="form-control" id="serverName" name="serverName" placeholder="Server Name" aria-describedby="basic-addon4" required>
+                                              </div>
+                                              <input type="submit" class="btn btn-outline-danger" name="submit">
+                                            </form>
+                                          </div>
+                            </div>
+                        </div>
+                    </div>
+              </div>
             
 	    </div>
 	</div> <!-- ROW END -->

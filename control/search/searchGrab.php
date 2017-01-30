@@ -11,7 +11,7 @@ $steamID = $_POST['steamID'];
             <div class="card">
                 <div class="card-header">Main Stats:</div>
                     <div class="card-block">
-                    	<div class='col-md-7'>
+                    	<div class='col-md-5'>
                           <?php $player = new Player($steamID, $dbh); ?>
                         	<p>Score: <span class="text-muted"><?php echo $player->get("score"); ?></span></p>
                         	<p>Kills: <span class="text-muted"><?php echo $player->get("kills"); ?></span></p>
@@ -20,7 +20,7 @@ $steamID = $_POST['steamID'];
                         	<p data-toggle="tooltip"  title="Average Death Per Round">ADR <span class="text-muted"><?php echo getADR($player); ?></span></p>
                         	<p>HS % <span class="text-muted"><?php echo getHeadShotPercent($player); ?></span></p>
                         </div>
-                        <div class='col-md-5' ">
+                        <div class='col-md-7' ">
                         <table style="table-layout:fixed;width:240px;">
                         	<tr>
                         		<td>
@@ -79,7 +79,7 @@ $steamID = $_POST['steamID'];
                 <div class="card-header">Weapon Stats:</div>
                     <div class="card-block">
                         <center><h3><b>Favorite Weapon: <span class="text-muted"><?php echo getFavoriteWeapon($player);?></span></b></h3></center>
-                        <table class="table table-striped table-inverse" style="text-align: center;">
+                        <table class="table table-striped table-inverse" id="searchTable" style="text-align: center;">
   							<thead>
   							  <tr>
   							    <th></th>
@@ -133,5 +133,8 @@ $steamID = $_POST['steamID'];
         </div>
     </div>
 </div>
-
+<script>
+ $(document).ready(function(){
+        $("#searchTable").DataTable();
+    });
 

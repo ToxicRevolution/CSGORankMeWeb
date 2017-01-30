@@ -5,6 +5,7 @@ function getSearch(steamID){
 		data: 'steamID=' +steamID,
 	}).done(function(d){
 		$('.display-search').html(d);
+		$('#searchTable').DataTable();
 	});
 }
 

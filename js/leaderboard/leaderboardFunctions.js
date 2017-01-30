@@ -6,7 +6,8 @@ $(document).ready(function() {
 	}).done(function(d){
 		$('#loadArea').html(d);
 		$('#LeaderBoardTable').DataTable({
-			"order": [[3, "desc"]]
+			"order": [[3, "desc"]],
+			"bPaginate": true,
 		});
 	});
 

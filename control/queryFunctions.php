@@ -7,6 +7,24 @@ function getAllSteamIDs($dbh){
 	return $items;
 }
 
+function getServerIDs($dbh){
+		$stmt = "SELECT id FROM servers";
+		$query = $dbh->prepare($stmt);
+		$query->execute();
+		$items = $query->fetchAll(PDO::FETCH_ASSOC);
+		return $items;
+}
+
+function getServerID($dbh, $ip, $port){
+		$stmt = "SELECT id FROM servers WHERE serverIP = :IP AND serverPort = :port";
+		$query = $dbh->prepare($stmt);
+		$query->bindValue(":IP", $ip);
+		$query->bindValue(":port", $port);
+		$query->execute();
+		$item = $query->fetchColumn();
+		return $item;
+}
+
 function getTotalPlayers($dbh){
 	$stmt = "SELECT count(steam) FROM rankme";
 	$query = $dbh->prepare($stmt);

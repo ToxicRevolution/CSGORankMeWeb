@@ -10,7 +10,7 @@ try{
 		$commaFlag = 0;
 		$headPHP = "<?php\n";
 		$tailPHP = "?>";
-		$requireStatements = "require_once(\"control/queryFunctions.php\");\nrequire_once(\"control/class.Player.php\");\n";
+		$requireStatements = "require_once(\"control/queryFunctions.php\");\nrequire_once(\"control/class.Player.php\");\nrequire_once(\"control/class.Server.php\")\n";
 
 
 		$pageTitle = "\$pageTitle = '{$_POST['pageTitle']}';\n";
@@ -36,21 +36,17 @@ try{
 		fwrite($fileMain, $array);
 		fwrite($fileMain, $webTitle);
 		fwrite($fileMain, $databaseConn);
+		if(isset($_POST['webURL'])){
+			$webURL = "\$webURL = '{$_POST['webURL']}';\n";
+			fwrite($fileMain, $webURL);
+		}
+		if(isset($_POST['sbURL'])){
+			$sbURL = "\$sbURL = '{$_POST['sbURL']}';\n";
+			fwrite($fileMain, $sbURL);
+		}
 		fwrite($fileMain, $tailPHP);
 
 		fclose($fileMain);
-
-		$fileSB = fopen("../sbData.php", "w");
-
-		$sbConn = "\$dbh = new PDO(\"mysql:host={$_POST['sbIP']};dbname={$_POST['sbName']}\", '{$_POST['sbUser']}', '{$_POST['sbPass']}');\n";
-
-		fwrite($fileSB, $headPHP);
-		fwrite($fileSB, "try {\n");
-		fwrite($fileSB, $sbConn);
-		fwrite($fileSB, "} catch(PDOException \$e) { \n echo \$e->getMessage();\n}\n");
-		fwrite($fileSB, $tailPHP);
-
-		fclose($fileSB);
 
 		$dbh = new PDO("mysql:host={$_POST['databaseIP']};dbname={$_POST['databaseName']}", $_POST['databaseUser'], $_POST['databasePass']);
 
@@ -67,7 +63,6 @@ try{
 		  `serverIP` varchar(128) NOT NULL,
 		  `serverPort` varchar(128) NOT NULL,
 		  `serverName` varchar(512) NOT NULL,
-		  `serverPass` varchar(256) NOT NULL,
 		  PRIMARY KEY (`id`)
 		) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;";
 		$stmt = $dbh->prepare($createServersDB);
