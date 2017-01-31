@@ -10,7 +10,7 @@ try{
 		$commaFlag = 0;
 		$headPHP = "<?php\n";
 		$tailPHP = "?>";
-		$requireStatements = "require_once(\"control/queryFunctions.php\");\nrequire_once(\"control/class.Player.php\");\nrequire_once(\"control/class.Server.php\")\n";
+		$requireStatements = "require_once(\"control/queryFunctions.php\");\nrequire_once(\"control/class.Player.php\");\nrequire_once(\"control/class.Server.php\");\n";
 
 
 		$pageTitle = "\$pageTitle = '{$_POST['pageTitle']}';\n";
