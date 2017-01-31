@@ -88,7 +88,7 @@ $steamID = $_POST['steamID'];
   							    <th><center>Percent Total Kill</center></th>
   							  </tr>
   							</thead>
-  							<tbody>
+  							
                 <?php
                   foreach($weaponsArray as $weapon){
                   echo "<tr>";
@@ -102,7 +102,7 @@ $steamID = $_POST['steamID'];
                   echo "</tr>";
                   }
                 ?>
-  						  </tbody>
+  						  
 						</table>
  
 						<div id="morris-Bar-chart"></div>

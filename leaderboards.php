@@ -14,21 +14,22 @@ require_once("config.php");
     <!-- Calling JS -->
     <!-- Latest compiled and minified Jquery JavaScript -->
     <script src="js/jquery.min.js"></script>
-    <script src="js/DataTable/jqueryDataTables.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/DataTable/datatables.min.js"></script>    
+    <script src="js/tether/tether.min.js"></script>
     <script src="js/DataTable/dataTables.bootstrap4.min.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
     <script src="js/leaderboard/leaderboardFunctions.js"></script>
     <!-- Bootstrap 4 and Tether -->
-    <script src="js/tether/tether.min.js"></script>
+
 
     <!-- Custom JS -->
     <script src="js/Navjs.js"></script>
     <script src="js/paging.js"></script>
 
     <!-- End Of JS -->
-
-    <!-- Bootstrap 4, Tether, Fontawesome -->
-    <link rel="stylesheet" href="css/DataTable/dataTables.bootstrap4.css">
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
+    <link rel="stylesheet" href="css/DataTable/datatables.min.css">
     <link rel="stylesheet" href="css/tether/tether.min.css">
     <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="css/fontawesome/font-awesome.min.css">

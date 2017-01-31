@@ -16,7 +16,7 @@ echo "<th>K/D</th>";
 //echo "<th>Search</th>"; //Do later
 echo "</tr>";
 echo "</thead>";
-echo "<tbody id='leaderboardTable' class='leaderboardTable'>";
+
 foreach ($items as $item){
 	$player = new Player($item['steam'], $dbh);
 	echo "<tr>";
@@ -27,6 +27,6 @@ foreach ($items as $item){
 	echo "<td>" . getKD($player) . "</td>";
 	echo "</tr>";
 } 
-echo "</tbody>\n</table>";
+echo "</table>";
 
 ?>
