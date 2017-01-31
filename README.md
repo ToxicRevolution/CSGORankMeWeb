@@ -64,7 +64,7 @@ CSGO Web Rank Me's Code Is Released Under The <a href="https://github.com/ToxicR
 <h3>B3none </h3>
 <ul>
 	<li>Coming Soon</li>
-	<li>Coming Soon</li>
+	<li>https://twitter.com/VoidRealityGG</li>
 </ul>
 
 # Donate!
