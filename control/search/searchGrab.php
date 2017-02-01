@@ -1,6 +1,10 @@
 <?php
 require_once("../../config.php");
 $steamID = $_POST['steamID'];
+$count = validSteamID($dbh, $steamID);
+if($count == 0){
+    header("location:../../views/error/errorSteamID.php");
+}
 ?>
 
 

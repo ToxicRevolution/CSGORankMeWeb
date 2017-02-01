@@ -48,7 +48,7 @@ require_once("config.php");
         <div class="wrapper">
 
             <?php include_once "views/nav/index.php" ?>
-
+            
             <?php include_once "views/$page/search-index.php" ?>
    
             <div class="display-search"></div>

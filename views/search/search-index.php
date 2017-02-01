@@ -2,6 +2,7 @@
 	<br>
 	<div class="row" style="padding-left: 5%;">
 	    <div class="col-md-12">
+
 	        <div class="card">
 	            <div class="card-header">Search for a player!</div>
 	                <div class="card-block">

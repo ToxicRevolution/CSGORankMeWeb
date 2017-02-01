@@ -25,6 +25,15 @@ function getServerID($dbh, $ip, $port){
 		return $item;
 }
 
+function validSteamID($dbh, $steamID){
+	$stmt = "SELECT count(steam) FROM rankme WHERE steam = :steamID";
+	$query = $dbh->prepare($stmt);
+	$query->bindValue(":steamID", $steamID);
+	$query->execute();
+	$item = $query->fetchColumn();
+	return $item;	
+}
+
 function getTotalPlayers($dbh){
 	$stmt = "SELECT count(steam) FROM rankme";
 	$query = $dbh->prepare($stmt);
