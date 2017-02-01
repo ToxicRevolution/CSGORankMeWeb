@@ -4,20 +4,20 @@ $fileMain = fopen("../../views/social.php", "w");
 $fixedTop = "<div id='fixedsocial'>\n";
 $fixedBottom = "</div>";
 fwrite($fileMain, $fixedTop);
-if(isset($_POST['facebook'])){
+if($_POST['facebook'] != ""){
 	$facebookWrite = "<a href='{$_POST['facebook']}'><div class='facebookflat'><i class='fa fa-facebook fa-3x' aria-hidden='true' style='color:white;'></i></div>\n";
 	fwrite($fileMain, $facebookWrite);
 }
 
-if(isset($_POST['twitter'])){
+if($_POST['twitter'] != ""){
 	$twitterWrite = "<a href='{$_POST['twitter']}'><div class='twitterflat'><i class='fa fa-twitter fa-3x' aria-hidden='true' style='color:white;'></i></div>\n";
 	fwrite($fileMain, $twitterWrite);
 }
-if(isset($_POST['twitch'])){
+if($_POST['twitch'] != ""){
 	$twitchWrite = "<a href='{$_POST['twitch']}'><div class='twitchflat'><i class='fa fa-twitch fa-3x' aria-hidden='true' style='color:white;'></i></div>\n";
 	fwrite($fileMain, $twitchWrite);
 }
-if(isset($_POST['steamGroup'])){
+if($_POST['steamGroup'] != ""){
 	$steamWrite = "<a href='{$_POST['steamGroup']}'><div class='steamflat'><i class='fa fa-steam fa-3x' aria-hidden='true' style='color:white;'></i></div>\n";
 	fwrite($fileMain, $steamWrite);
 }
