@@ -33,6 +33,14 @@ function getTotalPlayers($dbh){
 	return $item;	
 }
 
+function getTotalServers($dbh){
+	$stmt = "SELECT count(id) FROM servers";
+	$query = $dbh->prepare($stmt);
+	$query->execute();
+	$item = $query->fetchColumn();
+	return $item;	
+}
+
 function getKD($player){
 	$deaths = $player->get('deaths');
 	if($deaths == 0){
