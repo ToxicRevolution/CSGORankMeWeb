@@ -83,7 +83,7 @@ if($count == 0){
                 <div class="card-header">Weapon Stats:</div>
                     <div class="card-block">
                         <center><h3><b>Favorite Weapon: <span class="text-muted"><?php echo getFavoriteWeapon($player);?></span></b></h3></center>
-                        <table class="table table-striped table-inverse" id="searchTable" style="text-align: center;">
+                        <table class="table table-striped table-inverse striped inverse table-hover hover" id="searchTable" style="text-align: center;">
   							<thead>
   							  <tr>
   							    <th></th>

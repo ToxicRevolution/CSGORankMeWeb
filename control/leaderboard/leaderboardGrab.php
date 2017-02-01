@@ -5,7 +5,7 @@ error_reporting(E_ALL);
 require_once("../../config.php");
 //$items = getAllSteamIDs($dbh);
 $items = getLeaderBoardInfo($dbh);
-echo "<table class='table table-striped table-inverse table-bordered table-hover' id='LeaderBoardTable' table_Dynamic >";
+echo "<table class='table table-striped table-inverse table-bordered table-hover striped hover' id='LeaderBoardTable' table_Dynamic >";
 echo "<thead>";
 echo "<tr>";
 echo "<th></th>";
