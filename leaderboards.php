@@ -38,7 +38,9 @@ require_once("config.php");
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<?php include_once "views/social.php" ?>
+<?php if(file_exists('/views/social.php')){
+    include_once "views/social.php";
+    } ?>
 <div class="container" style="width:95%;">
     <div class="row">
         <div class="wrapper">
