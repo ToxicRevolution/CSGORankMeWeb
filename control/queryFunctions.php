@@ -157,7 +157,7 @@ function generateJsonForBar($player){
     $fiveseven = $player->get("fiveseven");
     $display = (string) "{y: 'M4A4/M4A1-S', value: {$m4s}},";
     $display .= (string) "{y: 'AK-47', value: {$ak}},";
-    $display .= (string) "{y: 'Awp', value: {$awp}},";
+    $display .= (string) "{y: 'AWP', value: {$awp}},";
     $display .= (string) "{y: 'Desert Eagle', value: {$deagle}},";
     $display .= (string) "{y: 'USP/P2000', value: {$ctPistols}},";
     $display .= (string) "{y: 'Glock', value: {$glock}},";
@@ -239,7 +239,7 @@ function getWeaponName($weapon){
 		case "hegrenade":
 			return "HE Grenade";
 		case "flashbang":
-			return "Flash Bang";
+			return "Flash Grenade";
 		case "smokegrenade":
 			return "Smoke Grenade";
 		case "decoy":

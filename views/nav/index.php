@@ -18,10 +18,18 @@
                         </li>
                         <?php
                         if(isset($webURL)){
+                            $parsed = parse_url($webURL);
+                            if (empty($parsed['scheme'])) {
+                                $webURL = 'http://' . ltrim($webURL, '/');
+                            }
                             echo "<li>";
                             echo "<a href='{$webURL}'>Our Website <span class='fa fa-share pull-right'></span></a>";
                             echo "</li>";
                         }if(isset($sbURL)){
+                            $parsed = parse_url($sbURL);
+                            if (empty($parsed['scheme'])) {
+                                $sbURL = 'http://' . ltrim($sbURL, '/');
+                            }
                             echo "<li>";
                             echo "<a href='{$sbURL}'>SourceBans <span class='fa fa-ban pull-right'></span></a>";
                             echo "</li>";

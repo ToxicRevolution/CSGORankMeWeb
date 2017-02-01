@@ -1,1 +1,1 @@
-<center><h1>Invalid SteamID, please Try Again</h1></center>
+<center><h1>SteamID not found, are you sure it is correct?</h1></center>
