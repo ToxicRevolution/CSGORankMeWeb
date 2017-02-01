@@ -3,8 +3,8 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 require_once("../../config.php");
-$items = getAllSteamIDs($dbh);
-
+//$items = getAllSteamIDs($dbh);
+$items = getLeaderBoardInfo($dbh);
 echo "<table class='table table-striped table-inverse table-bordered table-hover' id='LeaderBoardTable' table_Dynamic >";
 echo "<thead>";
 echo "<tr>";
@@ -18,13 +18,20 @@ echo "</tr>";
 echo "</thead>";
 
 foreach ($items as $item){
-	$player = new Player($item['steam'], $dbh);
+	//$player = new Player($item['steam'], $dbh);
 	echo "<tr>";
 	echo "<td><i class='fa fa-crosshairs' aria-hidden='true'></i></td>";
+	
+	/*
 	echo "<td>" . $player->get("name") . "</td>";
 	echo "<td>" . $player->get("steam") . "</td>";
 	echo "<td>" . $player->get("score") . "</td>";
 	echo "<td>" . getKD($player) . "</td>";
+	*/
+	echo "<td>" . $item["name"] . "</td>";
+	echo "<td>" . $item["steam"] . "</td>";
+	echo "<td>" . $item["score"] . "</td>";
+	echo "<td>" . getKDLeaderboard($item['kills'], $item['deaths']) . "</td>";
 	echo "</tr>";
 } 
 echo "</table>";

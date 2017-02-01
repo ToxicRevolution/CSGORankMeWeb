@@ -34,6 +34,14 @@ function validSteamID($dbh, $steamID){
 	return $item;	
 }
 
+function getLeaderBoardInfo($dbh){
+	$stmt = "SELECT steam, name, score, kills, deaths FROM rankme WHERE score > 0";
+	$query = $dbh->prepare($stmt);
+	$query->execute();
+	$items = $query->fetchAll(PDO::FETCH_ASSOC);
+	return $items;
+}
+
 function getTotalPlayers($dbh){
 	$stmt = "SELECT count(steam) FROM rankme";
 	$query = $dbh->prepare($stmt);
@@ -56,6 +64,14 @@ function getKD($player){
 		$deaths = 1;
 	}
 	$kd = round($player->get("kills")/$deaths, 2);
+	return $kd;
+}
+
+function getKDLeaderboard($kills, $deaths){
+	if($deaths == 0){
+		$deaths = 1;
+	}
+	$kd = round($kills/$deaths, 2);
 	return $kd;
 }
 
