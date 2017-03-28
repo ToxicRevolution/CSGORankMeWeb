@@ -24,7 +24,7 @@ if($count == 0){
                         	<p data-toggle="tooltip"  title="Average Death Per Round">ADR <span class="text-muted"><?php echo getADR($player); ?></span></p>
                         	<p>HS % <span class="text-muted"><?php echo getHeadShotPercent($player); ?></span></p>
                         </div>
-                        <div class='col-md-7' ">
+                        <div class='col-md-7' >
                         <table style="table-layout:fixed;width:240px;">
                         	<tr>
                         		<td>
@@ -121,8 +121,7 @@ if($count == 0){
                               barColors: function (row, series, type){
                                 if(row.label == "M4A4/M4A1-S") return "#ff4d4d";
                                 else if(row.label == "AK-47") return "#ff3333";
-                                else if(row.label == "Awp") return "#ff1a1a";
-                                else if(row.label == "deagle") return "#ff0000";
+                                else if(row.label == "AWP") return "#ff1a1a";
                                 else if(row.label == "Desert Eagle") return "#e60000";
                                 else if(row.label == "USP/P2000") return "#cc0000";
                                 else if(row.label == "Glock") return "#b30000";

@@ -13,6 +13,7 @@ echo "<th>Username</th>";
 echo "<th>SteamID</th>";
 echo "<th>Score</th>";
 echo "<th>K/D</th>";
+echo "<th>Profile</th>";
 //echo "<th>Search</th>"; //Do later
 echo "</tr>";
 echo "</thead>";
@@ -32,6 +33,7 @@ foreach ($items as $item){
 	echo "<td>" . $item["steam"] . "</td>";
 	echo "<td>" . $item["score"] . "</td>";
 	echo "<td>" . getKDLeaderboard($item['kills'], $item['deaths']) . "</td>";
+	echo "<td><a href='profile.php?steamID=" . $item["steam"] . "'><button type='button' class='btn btn-success'>Profile</button></a></td>";
 	echo "</tr>";
 } 
 echo "</table>";
