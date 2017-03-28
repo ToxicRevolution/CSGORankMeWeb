@@ -26,7 +26,10 @@ The main restriction as of now is that there is only support for mySQL and not s
 </ol>
 
 # Help and Suport
-Contact Andy Petrzilka on steam. You can add me <a href="http://steamcommunity.com/id/toxicandy7474">Here</a> Please leave a comment on my profile as to why you are adding me.
+
+Start an Issue and Kenny or myself will reply and hopeful have a solution. 
+
+Additionally you can me on steam. You can add me <a href="http://steamcommunity.com/id/toxicandy7474">Here</a> Please leave a comment on my profile as to why you are adding me.
 
 Please report any errors this way as well so that I can update and fix those errors.
 
