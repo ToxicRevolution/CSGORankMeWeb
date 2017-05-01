@@ -16,7 +16,7 @@
 		<div class="container">
 		  <div class="jumbotron">
 		    <h1>Installing/Setting up your web interface</h1> 
-		    <p>Please fill out the following information for setting up your site! All the information will be saved to a file named config.xml if you need to change it later!</p> 
+		    <p>Please fill out the following information for setting up your site! All the information will be saved to a file named config.php if you need to change it later!</p> 
 		  </div>
 		  <div class="panel panel-deafult">
 		  	<div class="panel-body">
