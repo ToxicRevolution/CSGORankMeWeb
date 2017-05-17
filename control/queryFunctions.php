@@ -15,6 +15,14 @@ function getServerIDs($dbh){
 		return $items;
 }
 
+function getUsers($dbh){
+		$stmt = "SELECT * FROM users";
+		$query = $dbh->prepare($stmt);
+		$query->execute();
+		$items = $query->fetchAll(PDO::FETCH_ASSOC);
+		return $items;
+}
+
 function getServerID($dbh, $ip, $port){
 		$stmt = "SELECT id FROM servers WHERE serverIP = :IP AND serverPort = :port";
 		$query = $dbh->prepare($stmt);

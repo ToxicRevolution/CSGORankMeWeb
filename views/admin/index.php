@@ -1,4 +1,9 @@
 <div class="content">
+<?php
+  if(isset($_GET['msg'])){
+    echo "<h2><center>{$_GET['msg']}</center></h2>";
+  }
+?>
 	<br>
 	<div class="row" style="padding-left: 5%;">
 	    <div class="col-md-12">
@@ -13,6 +18,13 @@
               <li class="nav-item">
                 <a class="nav-link" href="#manageServers" role="tab" data-toggle="tab">Manage Servers</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#addAccounts" role="tab" data-toggle="tab">Add Accounts</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#manageAccounts" role="tab" data-toggle="tab">Manage Accounts</a>
+              </li>
+
             </ul>
             
             <!-- Tab panes -->
@@ -123,5 +135,69 @@
               </div>
             
 	    </div>
+      <div role="tabpanel" class="tab-pane fade" id="addAccounts">
+              <div class="card">
+                  <div class="card-header">Add accounts!</div>
+                      <div class="card-block">
+                               If you want to add an account use this form!                      
+                               <div class="row">
+                                    <div class="col-md-6" style="float: none; margin:0 auto;">
+                                          <div class="input-group">
+                                            <form action="control/admin/addAccount.php" method="POST" id="addAccount" >
+                                              <div class="input-group">
+                                              <span class="input-group-addon" id="basic-addon2">Account User/Email*</span>
+                                              <input type="text" class="form-control" id="accountEmail" name="accountEmail" placeholder="Email/User" aria-describedby="basic-addon2" required>
+                                              </div>
+                                              <div class="input-group">
+                                              <span class="input-group-addon" id="basic-addon3">Account Password*</span>
+                                              <input type="password" class="form-control" id="accountPass" name="accountPass" value="" aria-describedby="basic-addon3" required>
+                                              </div>
+                                              <div class="input-group">
+                                              <span class="input-group-addon" id="basic-addon4">Confirm Password *</span>
+                                              <input type="password" class="form-control" id="confPass" name="confPass"  aria-describedby="basic-addon4" required>
+                                              </div>
+                                              <input type="submit" class="btn btn-outline-danger" name="submit">
+                                            </form>
+                                          </div>
+                            </div>
+                        </div>
+                    </div>
+              </div>
+            
+      </div>
+      <div role="tabpanel" class="tab-pane fade" id="manageAccounts">
+              <div class="card">
+                  <div class="card-header">Edit account Information!</div>
+                      <div class="card-block">
+                               If you want to edit an account use this form!                      
+                               <div class="row">
+                                    <div class="col-md-6" style="float: none; margin:0 auto;">
+                                          <div class="input-group">
+                                            <form action="control/admin/updateAccount.php" method="POST" id="addAccount" >
+                                              <div class="input-group">
+                                              <span class="input-group-addon" id="basic-addon2">Account User/Email*</span>
+                                              <select class="form-control" id="accountID" name="accountID" aria-describedby="basic-addon1" required><option></option>
+                                              <?php
+                                               require_once("control/admin/getAccounts.php"); 
+                                              ?>
+                                              </select>
+                                              </div>
+                                              <div class="input-group">
+                                              <span class="input-group-addon" id="basic-addon3">New Password*</span>
+                                              <input type="password" class="form-control" id="accountPass" name="accountPass" value="" aria-describedby="basic-addon3" required>
+                                              </div>
+                                              <div class="input-group">
+                                              <span class="input-group-addon" id="basic-addon4">Confirm Password *</span>
+                                              <input type="password" class="form-control" id="confPass" name="confPass"  aria-describedby="basic-addon4" required>
+                                              </div>
+                                              <input type="submit" class="btn btn-outline-danger" name="submit">
+                                            </form>
+                                          </div>
+                            </div>
+                        </div>
+                    </div>
+              </div>
+            
+      </div>
 	</div> <!-- ROW END -->
 </div>

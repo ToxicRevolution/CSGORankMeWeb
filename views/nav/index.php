@@ -50,7 +50,7 @@
                 <footer style="position:fixed; bottom: 0; height:40px;">
                     <?php
                     if(isset($_SESSION['sess_user_id'])){
-                       echo "<center><a href='logout.php'>Log Out</a></center>";
+                       echo "<center>&nbsp;<a href='logout.php'>Log Out</a></center>";
                     }else{
                        echo "<center>&nbsp;Admin area <a href='login.php'>Log in</a></center>";
                     }
