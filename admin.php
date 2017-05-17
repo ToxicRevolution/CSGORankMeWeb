@@ -4,6 +4,9 @@ Fill in phpVariables with values from Database later.
 */
 session_start();
 require_once("config.php");
+if(!isset($_SESSION['sess_user_id'])){
+    header('Location: login.php');
+}
 ?>
 <html>
 <head>
