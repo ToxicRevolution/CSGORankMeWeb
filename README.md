@@ -40,7 +40,11 @@ As of June 5th, 2017 we made a fairly large change which we encourage all users 
 <li>Download a new zip from github of the source code</li>
 <li>Upload all the files onto your server and overwrite all files (as long as you haven't made any changes to the source this won't affect anything, if you have let me know and I can help)</li>
 <li>Delete the instal folder that was added. (If you don't you leave a huge vulnerability on your site.)</li>
-<li>In the config.php file which was created with the install you ran the first time add at the very buttom the line: ``` $table = "YOUR DATABASE'S TABLE NAME HERE"; ```</ 
+<li>In the config.php file which was created with the install you ran the first time add at the very buttom the line: `$table = "YOUR DATABASE'S TABLE NAME HERE";`</li>
+<li>You're done! If you want you can just delete the entire old install and restart and rerun the install.php file instead of doing the above steps.</li>
+</ol>
+
+<b>What were the changes?</b> We changed the Players.class.php to a different initialization style as well as how the searchgrab, profilegrab and leaderboard grab pages retrieve information. Also cleaned up some of the functions and added support for those who don't use the default table name.
 
 # License and Copyright
 
