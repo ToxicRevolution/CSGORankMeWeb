@@ -8,4 +8,5 @@ $webTitle = '';
 $dbh = new PDO("mysql:host=examplehost ;dbname=exampledb ", 'db_user', 'db_pass ');
 $webURL = ' ';
 $sbURL = ' ';
+$title = "rankme";
 ?>
