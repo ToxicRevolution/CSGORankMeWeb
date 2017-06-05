@@ -33,6 +33,15 @@ Additionally you can me on steam. You can add me <a href="http://steamcommunity.
 
 Please report any errors this way as well so that I can update and fix those errors.
 
+# Changes 6/5/2017
+
+As of June 5th, 2017 we made a fairly large change which we encourage all users of our service to use. If you are downloading for the first time please ignore this but if you have already downloaded this web interface please do the following:
+<ol>
+<li>Download a new zip from github of the source code</li>
+<li>Upload all the files onto your server and overwrite all files (as long as you haven't made any changes to the source this won't affect anything, if you have let me know and I can help)</li>
+<li>Delete the instal folder that was added. (If you don't you leave a huge vulnerability on your site.)</li>
+<li>In the config.php file which was created with the install you ran the first time add at the very buttom the line: ``` $table = "YOUR DATABASE'S TABLE NAME HERE"; ```</ 
+
 # License and Copyright
 
 CSGO Web Rank Me's Code Is Released Under The <a href="https://github.com/ToxicRevolution/CSGORankMeWeb/blob/master/LICENSE">MIT License</a>
@@ -60,7 +69,7 @@ CSGO Web Rank Me's Code Is Released Under The <a href="https://github.com/ToxicR
 </ul>
 
 # Donate!
-If you feel super generous you can donate me a drink or two here :)
+If you feel super generous you can donate me a drink or two here d
 
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.me/AndyPetrzilka)
 
