@@ -1,7 +1,7 @@
 <?php
 require_once("config.php");
 $steamID = $_GET['steamID'];
-$count = validSteamID($dbh, $steamID);
+$count = validSteamID($dbh, $steamID, $table);
 if($count == 0){
     header("location:views/error/errorSteamID.php");
 }
@@ -13,16 +13,19 @@ if($count == 0){
     <div class="col-md-12">
         <div class="col-xs-12 col-md-6">
             <div class="card">
-                <div class="card-header">Main Stats:</div>
+              <?php
+              $item = getPlayer($steamID, $dbh, $table);
+              $player = new Player($item); ?>
+                <div class="card-header">Main Stats: <?= $player->name; ?></div>
                     <div class="card-block">
                     	<div class='col-md-5'>
-                          <?php $player = new Player($steamID, $dbh); ?>
-                        	<p>Score: <span class="text-muted"><?php echo $player->get("score"); ?></span></p>
-                        	<p>Kills: <span class="text-muted"><?php echo $player->get("kills"); ?></span></p>
-                        	<p>Deaths: <span class="text-muted"><?php echo $player->get("deaths"); ?></span></p>
-                        	<p>K/D: <span class="text-muted"><?php echo getKD($player); ?></span></p>
-                        	<p data-toggle="tooltip"  title="Average Death Per Round">ADR <span class="text-muted"><?php echo getADR($player); ?></span></p>
-                        	<p>HS % <span class="text-muted"><?php echo getHeadShotPercent($player); ?></span></p>
+
+                        	<p>Score: <span class="text-muted"><?= $player->get("score"); ?></span></p>
+                        	<p>Kills: <span class="text-muted"><?= $player->get("kills"); ?></span></p>
+                        	<p>Deaths: <span class="text-muted"><?= $player->get("deaths"); ?></span></p>
+                        	<p>K/D: <span class="text-muted"><?= getKD($player); ?></span></p>
+                        	<p data-toggle="tooltip"  title="Average Death Per Round">ADR <span class="text-muted"><?= getADR($player); ?></span></p>
+                        	<p>HS % <span class="text-muted"><?= getHeadShotPercent($player); ?></span></p>
                         </div>
                         <div class='col-md-7'>
                         <table style="table-layout:fixed;width:240px;">
@@ -34,17 +37,17 @@ if($count == 0){
                         	<tr>
                         		<td>
                         			<div class="center-block" style="margin: 0px auto;">
-                        				<?php 
+                        				<?php
                         					$Accuracy = getAccuracy($player);
                         				echo "<div class='c100 p{$Accuracy} dark big orange'>";
                         				echo "<span>{$Accuracy}%</span>";
                         				?>
-                        				
+
                         				<div class="slice">
                         		    		<div class="bar"></div>
                         		    		<div class="fill"></div>
                         				</div>
-                        			
+
                     				</div>
                     			</td>
                     		</tr>
@@ -62,11 +65,11 @@ if($count == 0){
                         	<script>
                           function graphDonut(colors){
                            var colors_array = colors.split("|");
-                           
+
                         	 Morris.Donut({
                         	     element: 'morris-donut-chart',
                                colors: colors_array,
-                        	     data: [<?php echo generateJsonForDonut($player); ?>],
+                        	     data: [<?= generateJsonForDonut($player); ?>],
                         	     resize: true
                         	 });
                            console.log(colors_array);
@@ -82,7 +85,7 @@ if($count == 0){
             <div class="card">
                 <div class="card-header">Weapon Stats:</div>
                     <div class="card-block">
-                        <center><h3><b>Favorite Weapon: <span class="text-muted"><?php echo getFavoriteWeapon($player);?></span></b></h3></center>
+                        <center><h3><b>Favorite Weapon: <span class="text-muted"><?= getFavoriteWeapon($player);?></span></b></h3></center>
                         <table class="table table-striped table-inverse striped inverse table-hover hover" id="searchTable" style="text-align: center;">
   							<thead>
   							  <tr>
@@ -92,7 +95,7 @@ if($count == 0){
   							    <th><center>Percent Total Kill</center></th>
   							  </tr>
   							</thead>
-  							
+
                 <?php
                   foreach($weaponsArray as $weapon){
                   echo "<tr>";
@@ -106,15 +109,15 @@ if($count == 0){
                   echo "</tr>";
                   }
                 ?>
-  						  
+
 						</table>
- 
+
 						<div id="morris-Bar-chart"></div>
                         <script>
-                          console.log(<?php echo generateJsonForBar($player); ?>);
+                          console.log(<?= generateJsonForBar($player); ?>);
                         	 Morris.Bar({
                         	    element: 'morris-Bar-chart',
-                        	    data: [<?php echo generateJsonForBar($player); ?>],
+                        	    data: [<?= generateJsonForBar($player); ?>],
                         	    xkey: 'y',
                         	    ykeys: ['value'],
                         	    labels: ['Graph'],

@@ -1,4 +1,4 @@
-<?php 
+<?php
 try{
 
 
@@ -26,6 +26,7 @@ try{
 		$array = "\$weaponsArray = array({$itemsArray});\n";
 		$webTitle = "\$webTitle = '{$_POST['browserTitle']}';\n";
 		$serverType = "\$serverType = '{$_POST['serverType']}';\n";
+		$table = "\$table = '{$_POST['tableName']}';\n";
 
 
 		$databaseConn = "\$dbh = new PDO(\"mysql:host={$_POST['databaseIP']};dbname={$_POST['databaseName']}\", '{$_POST['databaseUser']}', '{$_POST['databasePass']}');\n";
@@ -35,6 +36,8 @@ try{
 		fwrite($fileMain, $pageTitle);
 		fwrite($fileMain, $array);
 		fwrite($fileMain, $webTitle);
+		fwrite($fileMain, $serverType);
+		fwrite($fileMain, $table);
 		fwrite($fileMain, $databaseConn);
 		if(isset($_POST['webURL'])){
 			$webURL = "\$webURL = '{$_POST['webURL']}';\n";

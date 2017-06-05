@@ -7,7 +7,7 @@ require_once("config.php");
 ?>
 <html>
 <head>
-    <title> <?php echo $webTitle; ?> </title>
+    <title> <?= $webTitle; ?> </title>
     <?php $page = "leaderboards" //setting page for include ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">

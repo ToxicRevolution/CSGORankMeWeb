@@ -1,10 +1,10 @@
 <?php
-function getAllSteamIDs($dbh){
-	$stmt = "SELECT steam FROM rankme WHERE score > 0";
-	$query = $dbh->prepare($stmt);
+function getPlayer($steamID, $dbh, $table){
+	$query = $dbh->prepare("SELECT * FROM " . $table . " WHERE steam = :steamID");
+	$query->bindValue(":steamID", $steamID);
 	$query->execute();
-	$items = $query->fetchAll(PDO::FETCH_ASSOC);
-	return $items;
+	$item = $query->fetch(PDO::FETCH_ASSOC);
+	return $item;
 }
 
 function getServerIDs($dbh){
@@ -33,29 +33,26 @@ function getServerID($dbh, $ip, $port){
 		return $item;
 }
 
-function validSteamID($dbh, $steamID){
-	$stmt = "SELECT count(steam) FROM rankme WHERE steam = :steamID";
-	$query = $dbh->prepare($stmt);
+function validSteamID($dbh, $steamID, $table){
+	$query = $dbh->prepare("SELECT count(steam) FROM " . $table . " WHERE steam = :steamID");
 	$query->bindValue(":steamID", $steamID);
 	$query->execute();
 	$item = $query->fetchColumn();
-	return $item;	
+	return $item;
 }
 
-function getLeaderBoardInfo($dbh){
-	$stmt = "SELECT steam, name, score, kills, deaths FROM rankme WHERE score > 0";
-	$query = $dbh->prepare($stmt);
+function getLeaderBoardInfo($dbh, $table){
+	$query = $dbh->prepare("SELECT * FROM " . $table . " WHERE score > 0");
 	$query->execute();
 	$items = $query->fetchAll(PDO::FETCH_ASSOC);
 	return $items;
 }
 
-function getTotalPlayers($dbh){
-	$stmt = "SELECT count(steam) FROM rankme";
-	$query = $dbh->prepare($stmt);
+function getTotalPlayers($dbh, $table){
+	$query = $dbh->prepare("SELECT count(steam) FROM " . $table . "");
 	$query->execute();
 	$item = $query->fetchColumn();
-	return $item;	
+	return $item;
 }
 
 function getTotalServers($dbh){
@@ -63,7 +60,7 @@ function getTotalServers($dbh){
 	$query = $dbh->prepare($stmt);
 	$query->execute();
 	$item = $query->fetchColumn();
-	return $item;	
+	return $item;
 }
 
 function getKD($player){
@@ -72,14 +69,6 @@ function getKD($player){
 		$deaths = 1;
 	}
 	$kd = round($player->get("kills")/$deaths, 2);
-	return $kd;
-}
-
-function getKDLeaderboard($kills, $deaths){
-	if($deaths == 0){
-		$deaths = 1;
-	}
-	$kd = round($kills/$deaths, 2);
 	return $kd;
 }
 

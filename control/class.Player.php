@@ -80,90 +80,85 @@ class Player {
 	 * Class Constructor
 	 * @param 	 $steam
 	 * @param    $name
-	 * @param    $lastIP   
-	 * @param    $score   
-	 * @param    $kills   
-	 * @param    $deaths   
-	 * @param    $assists   
-	 * @param    $suicides   
-	 * @param    $tk   
-	 * @param    $shots   
-	 * @param    $hits   
-	 * @param    $headshots   
-	 * @param    $connected   
-	 * @param    $rounds_tr   
-	 * @param    $rounds_ct   
-	 * @param    $lastconnect   
-	 * @param    $knife   
-	 * @param    $glock   
-	 * @param    $hkp2000   
-	 * @param    $usp_silencer   
-	 * @param    $p250   
-	 * @param    $deagle   
-	 * @param    $elite   
-	 * @param    $fiveseven   
-	 * @param    $tec9   
-	 * @param    $cz75a   
-	 * @param    $revolver   
-	 * @param    $nova   
-	 * @param    $xm1014   
-	 * @param    $mag7   
-	 * @param    $sawedoff   
-	 * @param    $bizon   
-	 * @param    $mac10   
-	 * @param    $mp9   
+	 * @param    $lastIP
+	 * @param    $score
+	 * @param    $kills
+	 * @param    $deaths
+	 * @param    $assists
+	 * @param    $suicides
+	 * @param    $tk
+	 * @param    $shots
+	 * @param    $hits
+	 * @param    $headshots
+	 * @param    $connected
+	 * @param    $rounds_tr
+	 * @param    $rounds_ct
+	 * @param    $lastconnect
+	 * @param    $knife
+	 * @param    $glock
+	 * @param    $hkp2000
+	 * @param    $usp_silencer
+	 * @param    $p250
+	 * @param    $deagle
+	 * @param    $elite
+	 * @param    $fiveseven
+	 * @param    $tec9
+	 * @param    $cz75a
+	 * @param    $revolver
+	 * @param    $nova
+	 * @param    $xm1014
+	 * @param    $mag7
+	 * @param    $sawedoff
+	 * @param    $bizon
+	 * @param    $mac10
+	 * @param    $mp9
 	 * @param    $mp7
-	 * @param 	 $ump45   
-	 * @param    $p90   
-	 * @param    $galilar   
-	 * @param    $ak47   
-	 * @param    $scar20   
-	 * @param    $famas   
-	 * @param    $m4a1   
-	 * @param    $m4a1_silencer   
-	 * @param    $aug   
-	 * @param    $ssg08   
-	 * @param    $sg556   
-	 * @param    $awp   
-	 * @param    $g3sg1   
-	 * @param    $m249   
-	 * @param    $negev   
-	 * @param    $hegrenade   
-	 * @param    $flashbang   
-	 * @param    $smokegrenade   
-	 * @param    $inferno   
-	 * @param    $decoy   
-	 * @param    $taser   
-	 * @param    $head   
-	 * @param    $chest   
-	 * @param    $stomach   
-	 * @param    $left_arm   
-	 * @param    $right_arm   
-	 * @param    $left_leg   
-	 * @param    $right_leg   
-	 * @param    $c4_planted   
-	 * @param    $c4_exploded   
-	 * @param    $c4_defused   
-	 * @param    $ct_win   
-	 * @param    $tr_win   
-	 * @param    $hostages_rescued   
-	 * @param    $vip_killed   
-	 * @param    $vip_escaped   
-	 * @param    $vip_played   
-	 * @param    $mvp   
+	 * @param 	 $ump45
+	 * @param    $p90
+	 * @param    $galilar
+	 * @param    $ak47
+	 * @param    $scar20
+	 * @param    $famas
+	 * @param    $m4a1
+	 * @param    $m4a1_silencer
+	 * @param    $aug
+	 * @param    $ssg08
+	 * @param    $sg556
+	 * @param    $awp
+	 * @param    $g3sg1
+	 * @param    $m249
+	 * @param    $negev
+	 * @param    $hegrenade
+	 * @param    $flashbang
+	 * @param    $smokegrenade
+	 * @param    $inferno
+	 * @param    $decoy
+	 * @param    $taser
+	 * @param    $head
+	 * @param    $chest
+	 * @param    $stomach
+	 * @param    $left_arm
+	 * @param    $right_arm
+	 * @param    $left_leg
+	 * @param    $right_leg
+	 * @param    $c4_planted
+	 * @param    $c4_exploded
+	 * @param    $c4_defused
+	 * @param    $ct_win
+	 * @param    $tr_win
+	 * @param    $hostages_rescued
+	 * @param    $vip_killed
+	 * @param    $vip_escaped
+	 * @param    $vip_played
+	 * @param    $mvp
 	 * @param 	 $damage
 	 */
-	 public function __construct($steamID, $dbh) {
-    //Make DB Call
-	    $result = $stmt = "SELECT * FROM rankme WHERE steam = :steamID";
-	    $query = $dbh->prepare($stmt);
-	    $query->bindValue(":steamID", $steamID);
-	    $query->execute();
-	    $item = $query->fetch(PDO::FETCH_ASSOC);
-	    
-	    $this->steam = $item['steam'];
-	    $this->name = $item['name'];
-	    $this->lastIP = $item['lastip'];
+	 public function __construct($item) {
+
+
+	  $this->steam = $item['steam'];
+	  $this->name = $item['name'];
+	  $this->lastIP = $item['lastip'];
 		$this->score = $item['score'];
 		$this->kills = $item['kills'];
 		$this->deaths = $item['deaths'];

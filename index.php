@@ -7,7 +7,7 @@ require_once("config.php");
 ?>
 <html>
 <head>
-    <title> <?php echo $webTitle; ?> </title>
+    <title> <?= $webTitle; ?> </title>
     <?php $page = "home" //setting page for include ?>
     <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
     <meta charset="UTF-8">
@@ -26,19 +26,19 @@ require_once("config.php");
     <link rel="stylesheet" href="css/tether/tether.min.css">
     <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="css/fontawesome/font-awesome.min.css">
-    <!-- Custom CSS --> 
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/social.css">
 </head>
 <body>
-<?php 
+<?php
         @include_once "views/social.php";
 ?>
 <div class="container" style="width:95%;">
     <div class="row">
         <div class="wrapper">
             <?php include_once "views/nav/index.php" ?>
-   
+
             <?php include_once "views/$page/index.php" ?>
         </div>
     </div>

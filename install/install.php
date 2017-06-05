@@ -15,8 +15,8 @@
 	<body>
 		<div class="container">
 		  <div class="jumbotron">
-		    <h1>Installing/Setting up your web interface</h1> 
-		    <p>Please fill out the following information for setting up your site! All the information will be saved to a file named config.php if you need to change it later!</p> 
+		    <h1>Installing/Setting up your web interface</h1>
+		    <p>Please fill out the following information for setting up your site! All the information will be saved to a file named config.php if you need to change it later!</p>
 		  </div>
 		  <div class="panel panel-deafult">
 		  	<div class="panel-body">
@@ -39,21 +39,26 @@
 		  				<td>Database Name* <a href="#" data-toggle="tooltip" title="Add the database name"><i class="fa fa-question" aria-hidden="true"></i> </a> &nbsp;&nbsp;</td>
 		  				<td><input type="text" name="databaseName" id='installInputs' tabindex="4" required/></td>
 		  			</tr>
+						<tr>
+							<td>
+								Database Table* <a href="#" data-toggle="tooptip" title="Add the table name"><i class="fa fa-question" aria-hidden="true"></i> </a> &nbsp;&nbsp;</td>
+							<td><input type="text" name="tableName" id="installInputs" tabindex="5" required /></td>
+						</tr>
 		  			<tr>
 		  				<td>Database UserName* <a href="#" data-toggle="tooltip" title="Database username for any account that has access to view and alter the database."><i class="fa fa-question" aria-hidden="true"></i> </a> &nbsp;&nbsp;</td>
-		  				<td><input type="text" name="databaseUser" id='installInputs' tabindex="5" required/></td>
+		  				<td><input type="text" name="databaseUser" id='installInputs' tabindex="6" required/></td>
 		  			</tr>
 		  			<tr>
 		  				<td>Database Password* <a href="#" data-toggle="tooltip" title="Password to account lised above."><i class="fa fa-question" aria-hidden="true"></i> </a> &nbsp;&nbsp;</td>
-		  				<td><input type="text" name="databasePass" id='installInputs' tabindex="6" required/></td>
+		  				<td><input type="text" name="databasePass" id='installInputs' tabindex="7" required/></td>
 		  			</tr>
 		  			<tr>
 		  				<td>Admin Email* <a href="#" data-toggle="tooltip" title="This Account will be used to add servers to view the in the server tab, you will be able to see connected players, map and server ip from that page." class="fa fa-question" aria-hidden="true"></i> </a> &nbsp;&nbsp;</td>
-		  				<td><input type="text" name="adminEmail" id='installInputs' tabindex="7" required/></td>
+		  				<td><input type="text" name="adminEmail" id='installInputs' tabindex="8" required/></td>
 		  			</tr>
 		  			<tr>
 		  				<td>Admin Password* <a href="#" data-toggle="tooltip" title="Desired password for your admin account."><i class="fa fa-question" aria-hidden="true"></i> </a> &nbsp;&nbsp;</td>
-		  				<td><input type="text" name="adminPass" id='installInputs' tabindex="8" required/></td>
+		  				<td><input type="text" name="adminPass" id='installInputs' tabindex="9" required/></td>
 		  			</tr>
 		  			<!--<tr>
 		  				<td>Server Type* <a href="#" data-toggle="tooltip" title="What is the server's main plugin/function"><i class="fa fa-question" aria-hidden="true"></i> </a> &nbsp;&nbsp;</td>
@@ -76,7 +81,7 @@
     					   <td><input type="checkbox" name="check[]" value="knife" /></td><td><label>Knife</label></td>
     					   <td><input type="checkbox" name="check[]" value="usp_silencer" /></td><td><label>USP-S</label></td>
 						</tr>
-						<tr>    					
+						<tr>
     					   <td><input type="checkbox" name="check[]" value="hkp2000" /></td><td><label>P2000</label></td>
     					   <td><input type="checkbox" name="check[]" value="elite" /></td><td><label>Duel Barettas</label></td>
     					   <td><input type="checkbox" name="check[]" value="p250" /></td><td><label>P250</label></td>
@@ -140,7 +145,7 @@
 		  			</tr>
 		  			<tr>
 		  				<td>(Optional) Website URL <a href="#" data-toggle="tooltip" title="If you would like to link your website you can do so by entering the URL here."><i class="fa fa-question" aria-hidden="true"></i> </a> &nbsp;&nbsp;</td>
-		  				<td><input type="text" name="webURL" id='installInputs' tabindex="9"/></td>
+		  				<td><input type="text" name="webURL" id='installInputs' tabindex="10"/></td>
 		  			</tr>
 
 		  			<tr>
@@ -149,18 +154,17 @@
 		  			</tr>
 
 		  		</table>
-		  		<input type="submit" class="btn btn-success" id="submit" name="submit" tabindex="13"/>
+		  		<input type="submit" class="btn btn-success" id="submit" name="submit" tabindex="12"/>
 		  		</form>
 
 		  	</div>
 		  </div>
-		  
+
 		</div>
 		<script>
 			$(document).ready(function(){
-    			$('[data-toggle="tooltip"]').tooltip();   
+    			$('[data-toggle="tooltip"]').tooltip();
 			});
 		</script>
 	</body>
 </html>
-
