@@ -17,13 +17,13 @@ The main restriction as of now is that there is only support for mySQL and not s
 
 # Installation
 
-<ol>
-<li>Download all files and extract files into a folder on your webserver.</li>
-<li>In a browser navigate to http://yoursite.com/folderName/install/install.php </li>
-<li>Follow the install instructions by hovering over the tooltips for information about each</li>
-<li>Delete the install folder after filling in the install page.</li>
-<li>The site should be up at http://yoursite.com/folderName/ feel free to add social media links and servers by loging into your admin account on the bottom left and going to the admin area.</li>
-</ol>
+
+1. Download all files and extract files into a folder on your webserver.
+2. In a browser navigate to http://yoursite.com/folderName/install/install.php 
+3. Follow the install instructions by hovering over the tooltips for information about each
+4. Delete the install folder after filling in the install page.
+5. The site should be up at http://yoursite.com/folderName/ feel free to add social media links and servers by loging into your admin account on the bottom left and going to the admin area.
+
 
 # Help and Suport
 
@@ -36,13 +36,12 @@ Please report any errors this way as well so that I can update and fix those err
 # Changes 6/5/2017
 
 As of June 5th, 2017 we made a fairly large change which we encourage all users of our service to use. If you are downloading for the first time please ignore this but if you have already downloaded this web interface please do the following:
-<ol>
-<li>Download a new zip from github of the source code</li>
-<li>Upload all the files onto your server and overwrite all files (as long as you haven't made any changes to the source this won't affect anything, if you have let me know and I can help)</li>
-<li>Delete the instal folder that was added. (If you don't you leave a huge vulnerability on your site.)</li>
-<li>In the config.php file which was created with the install you ran the first time add at the very buttom the line: `$table = "YOUR DATABASE'S TABLE NAME HERE";`</li>
-<li>You're done! If you want you can just delete the entire old install and restart and rerun the install.php file instead of doing the above steps.</li>
-</ol>
+
+1. Download a new zip from github of the source code
+2. Upload all the files onto your server and overwrite all files (as long as you haven't made any changes to the source this won't affect anything, if you have let me know and I can help)
+3. Delete the instal folder that was added. (If you don't you leave a huge vulnerability on your site.)
+4. In the config.php file which was created with the install you ran the first time add at the very buttom the line: `$table = "YOUR DATABASE'S TABLE NAME HERE";`
+5. You're done! If you want you can just delete the entire old install and restart and rerun the install.php file instead of doing the above steps.
 
 <b>What were the changes?</b> We changed the Players.class.php to a different initialization style as well as how the searchgrab, profilegrab and leaderboard grab pages retrieve information. Also cleaned up some of the functions and added support for those who don't use the default table name.
 
