@@ -71,6 +71,10 @@ CSGO Web Rank Me's Code Is Released Under The <a href="https://github.com/ToxicR
 	<li>https://twitter.com/VoidRealityGG</li>
 </ul>
 
+# Want updates on this project and other projects?
+
+Check out our website, <a href="https://toxicrevolution.net">ToxicRevolution.net</a> to see our current projects and updates regarding current projects. We like to interact with other server owners and in general with the community so feel free to drop by.
+
 # Donate!
 If you feel super generous you can donate me a drink or two here d
 
