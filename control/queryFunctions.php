@@ -42,7 +42,7 @@ function validSteamID($dbh, $steamID, $table){
 }
 
 function getLeaderBoardInfo($dbh, $table){
-	$query = $dbh->prepare("SELECT * FROM " . $table . " WHERE score > 0");
+	$query = $dbh->prepare("SELECT * FROM " . $table . " WHERE score <> 1000");
 	$query->execute();
 	$items = $query->fetchAll(PDO::FETCH_ASSOC);
 	return $items;
