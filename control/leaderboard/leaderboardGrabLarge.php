@@ -19,20 +19,19 @@ echo "</tr>";
 echo "</thead>";
 
 foreach ($items as $item){
-	$player = new Player($item);
 	echo "<tr>";
 	echo "<td><i class='fa fa-crosshairs' aria-hidden='true'></i></td>";
 
 
-	echo "<td>" . $player->get("name") . "</td>";
-	echo "<td>" . $player->get("steam") . "</td>";
-	echo "<td>" . $player->get("score") . "</td>";
-	echo "<td>" . getKD($player) . "</td>";
+	echo "<td>" . $item['name']. "</td>";
+	echo "<td>" . $item['steam'] . "</td>";
+	echo "<td>" . $item['score'] . "</td>";
+	echo "<td>" . getKDFromDBObject($item) . "</td>";
 
 
-	echo "<td><a href='profile.php?steamID=" . $player->get("steam") . "'><button type='button' class='btn btn-success'>Profile</button></a></td>";
+	echo "<td><a href='profile.php?steamID=" . $item["steam"] . "'><button type='button' class='btn btn-success'>Profile</button></a></td>";
 	echo "</tr>";
 }
 echo "</table>";
-echo "Using ", memory_get_usage(false), " bytes of ram.";
+ echo "Using ", memory_get_usage(false), " bytes of ram.";
 ?>

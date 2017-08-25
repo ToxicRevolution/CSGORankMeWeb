@@ -42,7 +42,7 @@ function validSteamID($dbh, $steamID, $table){
 }
 
 function getLeaderBoardInfo($dbh, $table){
-	$query = $dbh->prepare("SELECT * FROM " . $table . " WHERE score <> 1000");
+	$query = $dbh->prepare("SELECT * FROM " . $table . " WHERE kills = 0 AND deaths = 0");
 	$query->execute();
 	$items = $query->fetchAll(PDO::FETCH_ASSOC);
 	return $items;
@@ -69,6 +69,15 @@ function getKD($player){
 		$deaths = 1;
 	}
 	$kd = round($player->get("kills")/$deaths, 2);
+	return $kd;
+}
+
+function getKDFromDBObject($item){
+	$deaths = $item['deaths'];
+	if( $deaths == 0){
+		$deaths = 1;
+	}
+	$kd = round($item['kills']/$deaths, 2);
 	return $kd;
 }
 
