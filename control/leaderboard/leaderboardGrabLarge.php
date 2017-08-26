@@ -33,5 +33,5 @@ foreach ($items as $item){
 	echo "</tr>";
 }
 echo "</table>";
- echo "Using ", memory_get_usage(false), " bytes of ram.";
+ //echo "Using ", memory_get_usage(false), " bytes of ram.";
 ?>
