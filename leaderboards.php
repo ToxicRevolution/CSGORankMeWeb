@@ -15,7 +15,7 @@ require_once("config.php");
     <!-- Latest compiled and minified Jquery JavaScript -->
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery-ui.min.js"></script>
-    <script src="js/DataTable/datatables.min.js"></script>    
+    <script src="js/DataTable/datatables.min.js"></script>
     <script src="js/tether/tether.min.js"></script>
     <script src="js/DataTable/dataTables.bootstrap4.min.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
@@ -34,7 +34,7 @@ require_once("config.php");
     <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="css/fontawesome/font-awesome.min.css">
     <link rel="stylesheet" href="css/social.css">
-    <!-- Custom CSS --> 
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -43,7 +43,7 @@ require_once("config.php");
     <div class="row">
         <div class="wrapper">
             <?php include_once "views/nav/index.php" ?>
-   
+
             <?php include_once "views/$page/index.php" ?>
         </div>
     </div>

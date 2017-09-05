@@ -47,6 +47,8 @@ try{
 			$sbURL = "\$sbURL = '{$_POST['sbURL']}';\n";
 			fwrite($fileMain, $sbURL);
 		}
+		$sqlDets = "\n\$sql_details = array(\n\t\t\t'user' => '{$_POST['databaseUser']}',\n\t\t\t'pass' => '{$_POST['databasePass']}',\n\t\t\t'db' => '{$_POST['databaseName']}',\n\t\t\t'host' => '{$_POST['databaseIP']}'\n);\n";
+		fwrite($fileMain, $sqlDets);
 		fwrite($fileMain, $tailPHP);
 
 		fclose($fileMain);
