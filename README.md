@@ -26,6 +26,7 @@ The main restriction as of now is that there is only support for mySQL and not s
 # Releases
 
 V1.0 - For the most part stable, runs into issues if using large datasets. Semi slow method of rendering leaderboard. Not recommended for large communities or communities with 10,000 or more rankme entries.
+
 v1.1.1 - Quickest release, utilizing server sided datatables, more stressful on server but much quicker. Stable as all bugs should be addressed as far as we can find. Even with more data calls to server you should end up requesting less data from that server than you would with V1.0.
 
 # Help and Suport
