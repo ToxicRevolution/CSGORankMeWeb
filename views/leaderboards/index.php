@@ -10,8 +10,8 @@
                             <th>Name</th>
                             <th>Steam</th>
                             <th>Score</th>
-                            <th>Kills</th>
-                            <th>Deaths</th>
+                            <th>K/D</th>
+                            <th>ADR</th>
                             <th>Profile</th>
                         </tr>
                     </thead>
@@ -20,8 +20,8 @@
                           <th>Name</th>
                           <th>Steam</th>
                           <th>Score</th>
-                          <th>Kills</th>
-                          <th>Deaths</th>
+                          <th>K/D</th>
+                          <th>ADR</th>
                           <th>Profile</th>
                         </tr>
                     </tfoot>

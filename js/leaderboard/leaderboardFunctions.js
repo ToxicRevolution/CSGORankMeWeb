@@ -137,7 +137,7 @@ $(document).ready(function() {
         "processing": true,
         "serverSide": true,
 				"order": [[ 2, "desc" ]],
-        "ajax": "control/leaderboard/leaderBoardGrab.php",
+        "ajax": "control/leaderboard/leaderboardGrab.php",
 				"pageLength": 25,
 				"columnDefs": [
 					{ "orderable": false, "targets": 3 },
