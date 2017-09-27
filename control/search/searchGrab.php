@@ -24,7 +24,7 @@ if($count == 0){
                         	<p>Kills: <span class="text-muted"><?= $player->get("kills"); ?></span></p>
                         	<p>Deaths: <span class="text-muted"><?= $player->get("deaths"); ?></span></p>
                         	<p>K/D: <span class="text-muted"><?= getKD($player); ?></span></p>
-                        	<p data-toggle="tooltip"  title="Average Death Per Round">ADR <span class="text-muted"><?= getADR($player); ?></span></p>
+                        	<p data-toggle="tooltip"  title="Average Damage Per Round">ADR <span class="text-muted"><?= getADR($player); ?></span></p>
                         	<p>HS % <span class="text-muted"><?= getHeadShotPercent($player); ?></span></p>
                         </div>
                         <div class='col-md-7' >
