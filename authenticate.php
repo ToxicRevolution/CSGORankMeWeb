@@ -22,4 +22,3 @@ if (isset($row['email'])) {
 } else {
     header("Location: login.php?wrong=Email Not Found");
 }
-?>

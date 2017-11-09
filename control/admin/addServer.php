@@ -7,4 +7,3 @@ $stmt->bindValue(":serverPort", $_POST['serverPort']);
 $stmt->bindValue(":serverName", $_POST['serverName']);
 $stmt->execute();
 header("location:../../admin.php");
-?>

@@ -6,9 +6,3 @@
 		$server = new Server($item['id'], $dbh);
 		echo "<h4><a class='connect' title='Click to connect' href='steam://connect/{$server->get("IP")}:{$server->get("port")}'>{$server->get("name")} - {$server->get("IP")}:{$server->get("port")}</a></h4><br>\n";
 	}
-	
-
-
-
-?>
-

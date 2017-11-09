@@ -25,4 +25,3 @@ if(isset($_POST['steamGroup'])){
 fwrite($fileMain, $fixedBottom);
 fclose($fileMain);
 header("location:../../admin.php");
-?>

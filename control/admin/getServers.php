@@ -6,9 +6,3 @@
 		$server = new Server($item['id'], $dbh);
 		echo "<option value='{$item['id']}'>{$server->get("name")} - {$server->get("IP")}:{$server->get("port")}</option>";
 	}
-	
-
-
-
-?>
-

@@ -28,5 +28,3 @@ foreach ($items as $item){
 	echo "</tr>";
 } 
 echo "</table>";
-
-?>
