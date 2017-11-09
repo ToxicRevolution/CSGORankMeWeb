@@ -13,12 +13,12 @@ $steamID = $_POST['steamID'];
                     <div class="card-block">
                     	<div class='col-md-5'>
                           <?php $player = new Player($steamID, $dbh); ?>
-                        	<p>Score: <span class="text-muted"><?php echo $player->get("score"); ?></span></p>
-                        	<p>Kills: <span class="text-muted"><?php echo $player->get("kills"); ?></span></p>
-                        	<p>Deaths: <span class="text-muted"><?php echo $player->get("deaths"); ?></span></p>
-                        	<p>K/D: <span class="text-muted"><?php echo getKD($player); ?></span></p>
-                        	<p data-toggle="tooltip"  title="Average Death Per Round">ADR <span class="text-muted"><?php echo getADR($player); ?></span></p>
-                        	<p>HS % <span class="text-muted"><?php echo getHeadShotPercent($player); ?></span></p>
+                        	<p>Score: <span class="text-muted"><?= $player->get("score"); ?></span></p>
+                        	<p>Kills: <span class="text-muted"><?= $player->get("kills"); ?></span></p>
+                        	<p>Deaths: <span class="text-muted"><?= $player->get("deaths"); ?></span></p>
+                        	<p>K/D: <span class="text-muted"><?= getKD($player); ?></span></p>
+                        	<p data-toggle="tooltip"  title="Average Death Per Round">ADR <span class="text-muted"><?= getADR($player); ?></span></p>
+                        	<p>HS % <span class="text-muted"><?= getHeadShotPercent($player); ?></span></p>
                         </div>
                         <div class='col-md-7' ">
                         <table style="table-layout:fixed;width:240px;">
@@ -62,7 +62,7 @@ $steamID = $_POST['steamID'];
                         	 Morris.Donut({
                         	     element: 'morris-donut-chart',
                                colors: colors_array,
-                        	     data: [<?php echo generateJsonForDonut($player); ?>],
+                        	     data: [<?= generateJsonForDonut($player); ?>],
                         	     resize: true
                         	 });
                            console.log(colors_array);
@@ -78,7 +78,7 @@ $steamID = $_POST['steamID'];
             <div class="card">
                 <div class="card-header">Weapon Stats:</div>
                     <div class="card-block">
-                        <center><h3><b>Favorite Weapon: <span class="text-muted"><?php echo getFavoriteWeapon($player);?></span></b></h3></center>
+                        <center><h3><b>Favorite Weapon: <span class="text-muted"><?= getFavoriteWeapon($player);?></span></b></h3></center>
                         <table class="table table-striped table-inverse" id="searchTable" style="text-align: center;">
   							<thead>
   							  <tr>
@@ -110,7 +110,7 @@ $steamID = $_POST['steamID'];
                           
                         	 Morris.Bar({
                         	    element: 'morris-Bar-chart',
-                        	    data: [<?php echo generateJsonForBar($player); ?>],
+                        	    data: [<?= generateJsonForBar($player); ?>],
                         	    xkey: 'y',
                         	    ykeys: ['value'],
                         	    labels: ['Graph'],

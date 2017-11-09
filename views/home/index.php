@@ -3,7 +3,7 @@
                 <div class="row" style="padding-left: 5%;">
                     <div class="col-md-12">
                         <div class="card">
-                            <div class="card-header">Welcome to <?php echo $pageTitle;?></div>
+                            <div class="card-header">Welcome to <?= $pageTitle;?></div>
                                 <div class="card-block">
                             With this page you can track your stats on any server running the RankMe plugin. You can also check where you fall on the leaderboards and who current sits atop the leaderboads. You can search and sort by various stats and check various graphs!
                                 </div>
@@ -41,7 +41,7 @@
                                         <i class="fa fa-user fa-5x"></i>
                                     </div>
                                     <div class="col-xs-9 text-xs-right">
-                                        <div class="huge"><b><?php echo getTotalPlayers($dbh); ?></b></div>
+                                        <div class="huge"><b><?= getTotalPlayers($dbh); ?></b></div>
                                         <div><b>Total Users!</b></div>
                                     </div>
                                 </div>
@@ -63,7 +63,7 @@
                                         <i class="fa fa-server fa-5x"></i>
                                     </div>
                                     <div class="col-xs-9 text-xs-right">
-                                        <div class="huge"><b><?php echo getTotalServers($dbh); ?></b></div>
+                                        <div class="huge"><b><?= getTotalServers($dbh); ?></b></div>
                                         <div><b>Servers To Play On!</b></div>
                                     </div>
                                 </div>

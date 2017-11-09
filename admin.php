@@ -7,7 +7,7 @@ require_once("config.php");
 ?>
 <html>
 <head>
-    <title> <?php echo $webTitle; ?> </title>
+    <title> <?= $webTitle; ?> </title>
     <?php $page = "admin" //setting page for include ?>
     <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
     <meta charset="UTF-8">

@@ -1,7 +1,7 @@
             <div class="side-bar">
                 <ul>
                     <li class="menu-head">
-                        <b><?php echo $pageTitle; ?></b> <a href="#" class="push_menu"><span class="fa fa-reorder pull-right"></span></a>
+                        <b><?= $pageTitle; ?></b> <a href="#" class="push_menu"><span class="fa fa-reorder pull-right"></span></a>
                     </li>
                     <div class="menu">
                         <li>
