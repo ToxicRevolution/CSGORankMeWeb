@@ -83,5 +83,4 @@ Check out our website, <a href="https://toxicrevolution.net">ToxicRevolution.net
 If you feel super generous you can donate me a drink or two here d
 
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.me/AndyPetrzilka)
-
-
+[![Keybase](https://img.shields.io/badge/Keybase-Group-blue.svg)](https://keybase.io/team/toxicrevolution.development)
