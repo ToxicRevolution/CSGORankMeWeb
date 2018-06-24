@@ -1,0 +1,49 @@
+version: '2'
+services: 
+  app:
+    build:
+      context: .docker
+      dockerfile: app.Dockerfile
+    working_dir: /var/www
+    volumes: 
+      - ./:/var/www
+    env_file: '.env'
+    environment: 
+      - "DB_PORT=3306"
+      - "DB_HOST=database"
+      - "REDIS_HOST=redis"
+    
+  web:
+    build: 
+      context: .docker
+      dockerfile: web.Dockerfile
+    working_dir: /var/www
+    volumes_from:
+      - app
+    ports: 
+      - 80:80
+
+  database:
+    image: mariadb:10.3.2
+    volumes: 
+      - dbdata:/var/lib/mysql
+    environment: 
+      - "MYSQL_DATABASE=homestead"
+      - "MYSQL_USER=homestead"
+      - "MYSQL_PASSWORD=secret"
+      - "MYSQL_ROOT_PASSWORD=secret"
+
+    ports:
+      - "33061:3306"
+
+  redis:
+    image: redis:3.2.11
+    volumes:
+      - redis:/data    
+  
+  memcached:
+      image: memcached:1.5.7-alpine
+
+volumes: 
+  dbdata:
+  redis:
