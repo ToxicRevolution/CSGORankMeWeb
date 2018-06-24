@@ -1,18 +1,13 @@
 <?php
+// basic statistics about your players
+Route::get("/panelstats/{con?}", "RankMeData@panelStats");
 
-use Illuminate\Http\Request;
+// Routing for parameterized paginated database responses
+Route::get("/all/{con?}", "RankMeData@getPaginated");
 
-/*
-|--------------------------------------------------------------------------
-| API Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register API routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| is assigned the "api" middleware group. Enjoy building your API!
-|
-*/
+// Get player profiles
+Route::get("/player/{id}/{con?}", "RankMeData@getProfile");
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Get top X players
+Route::get("/top/{count}/{con?}", "RankMeData@getTopPlayers");
+
