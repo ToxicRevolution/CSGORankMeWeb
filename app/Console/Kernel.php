@@ -24,8 +24,9 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')
-        //          ->hourly();
+        if(config("rankme.vac.enabled")){
+            $schedule->command(VacStatus::class)->daily();
+        }
     }
 
     /**
