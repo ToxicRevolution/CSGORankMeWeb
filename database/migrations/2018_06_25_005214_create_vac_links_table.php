@@ -15,7 +15,7 @@ class CreateVacLinksTable extends Migration
     {
         Schema::create('vac_links', function (Blueprint $table) {
             $table->increments('id');
-            $table->string("rankme_id");
+            $table->string("rankme_id")->unique();
             $table->timestamps();
         });
     }

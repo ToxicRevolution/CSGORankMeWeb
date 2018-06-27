@@ -39,9 +39,11 @@ class VacStatus extends Controller
                             $del->where("steam", $i['steam'])->delete();
                         }
                         if(!Config::get("rankme.vac.autodelete")){
-                            $link = new VacLink();
-                            $link->rankme_id = $i['steam'];
-                            $link->save();
+                            if(VacLink::where("rankme_id", $i['steam'])->count() < 1){
+                                $link = new VacLink();
+                                $link->rankme_id = $i['steam'];
+                                $link->save();
+                            }
                         }
                     }
                 }
