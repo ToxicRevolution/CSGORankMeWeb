@@ -8,6 +8,14 @@ $webTitle = '';
 $serverType = '';
 $table = 'rankme';
 $dbh = new PDO("mysql:host=examplehost ;dbname=exampledb ", 'db_user', 'db_pass ');
+
+$sql_details = array(
+			'user' => 'db_user',
+			'pass' => 'db_pass',
+			'db' => 'exampledb',
+			'host' => 'examplehost'
+);
+
 $webURL = ' ';
 $sbURL = ' ';
 
