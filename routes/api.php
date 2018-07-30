@@ -9,4 +9,5 @@ Route::get("/player/{id}/{con?}", "RankMeData@getProfile");
 Route::get("/top/{count}/{con?}", "RankMeData@getTopPlayers");
 // Delete a VAC'd Player
 Route::post("/vac/add", "Tracker\Manage@delete")->middleware("auth:api");
-
+// Board Configuration
+Route::get("/settings", "SettingsList");

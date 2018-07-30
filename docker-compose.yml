@@ -35,15 +35,6 @@ services:
 
     ports:
       - "33061:3306"
-
-  redis:
-    image: redis:3.2.11
-    volumes:
-      - redis:/data    
-  
-  memcached:
-      image: memcached:1.5.7-alpine
-
 volumes: 
   dbdata:
   redis:
