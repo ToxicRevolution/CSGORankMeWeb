@@ -22,5 +22,6 @@
         "react-redux": "^5.0.7",
         "redux": "^4.0.0",
         "uuid": "^3.3.2"
-    }
+    },
+    "dependencies": {}
 }
