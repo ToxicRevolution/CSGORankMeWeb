@@ -1,13 +1,4 @@
 <?php
-// Authentication Routes
-Route::group(["prefix"=>"auth"], function(){
-    Route::post("/login", "AuthController@login");
-    Route::post("/logout", "AuthController@logout");
-    Route::post("/refresh", "AuthController@refresh");
-    Route::post("/me", "AuthController@me");
-    
-});
-
 // basic statistics about your players
 Route::get("/panelstats/{con?}", "RankMeData@panelStats");
 // Routing for parameterized paginated database responses
