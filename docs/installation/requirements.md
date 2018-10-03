@@ -15,6 +15,7 @@ title: Requirements
 * Tokenizer PHP Extension
 * Ctype PHP Extension
 * JSON PHP Extension 
+* GMP PHP Extension
 
 _You must also be using RankMe with MySQL and **NOT** SQLite!!_
 

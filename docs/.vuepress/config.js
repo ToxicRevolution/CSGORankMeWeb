@@ -22,7 +22,8 @@ module.exports = {
       displayAllHeaders: true,
       nav: [
         { text: "Home", link: "/"},
-        { text: "Repo", link: "https://github.com/ToxicRevolution/CSGORankMeWeb"}
+        { text: "About", link: "/about/"},
+        { text: "Repo", link: "https://github.com/ToxicRevolution/CSGORankMeWeb"},
       ],
       sidebar: [
         {

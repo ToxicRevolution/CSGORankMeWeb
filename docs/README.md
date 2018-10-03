@@ -6,7 +6,7 @@
 <a href="https://www.paypal.me/AndyPetrzilka"><img src="https://img.shields.io/badge/Donate-PayPal-green.svg" alt="Donate"></a>
 <a href="https://keybase.io/team/toxicrevolution.development"><img src="https://img.shields.io/badge/Keybase-Group-blue.svg" alt="KeyBase"></a>
 <a href="https://discord.gg/Vcz3ufr"><img src="https://img.shields.io/badge/Discord-Server-orange.svg" alt="Discord"></a>
-<a href="https://github.com/ToxicRevolution/CSGORankMeWeb/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-lightgrey.svg" alt="License"></a>
+<a href="https://github.com/ToxicRevolution/CSGORankMeWeb/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-lightgrey.svg" alt="License"></a>
 </p>
 
 A web interface for RankMe CSGO stat tracking plugin. This web interface allows users to view the stats from Counter Strike Global Offensive servers running the RankMe plugin found [Here](https://forums.alliedmods.net/showthread.php?p=1456869) or Kento's version found [Here](https://forums.alliedmods.net/showthread.php?t=290063).
@@ -41,5 +41,4 @@ Check out our website, <a href="https://toxicrevolution.net">ToxicRevolution.net
 * [GitHub Issues](https://github.com/ToxicRevolution/CSGORankMeWeb/issues)
 * [Waffle.io](https://waffle.io/ToxicRevolution/CSGORankMeWeb)
 * [Discord](https://discord.gg/Vcz3ufr)
-
-
+* [Default Colors](https://coolors.co/ffffff-ffe8d1-568ea3-68c3d4-826251)
