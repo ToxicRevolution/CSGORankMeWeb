@@ -12,14 +12,17 @@
     <!-- Styles -->
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 </head>
-<body class="bg-teal-lightest h-screen antialiased">
+<body class="bg-grey-light h-screen antialiased">
     <div id="app">
         <nav class="bg-white h-12 shadow mb-8 px-6 md:px-0">
             <div class="container mx-auto h-full">
                 <div class="flex items-center justify-center h-12">
-                    <div class="mr-6">
-                        <a href="{{ url('/') }}" class="text-lg font-hairline text-teal-darker no-underline hover:underline">
-                            {{ config('app.name', 'Laravel') }}
+                    <div class="mr-6 h-full">
+                        <a href="{{ url('/') }}" class="text-lg font-hairline no-underline">
+                            <div class="h-full flex items-center p-2 hover:bg-grey text-black hover:text-white">
+                                <img class="fill-current h-8 w-auto" src="/img/logo.svg" height="40px" width="auto" />
+                                {{ config('app.name', 'Laravel') }}
+                            </div>
                         </a>
                     </div>
                     <div class="flex-1 text-right">
@@ -27,7 +30,9 @@
                             <a class="no-underline hover:underline text-teal-darker pr-3 text-sm" href="{{ url('/login') }}">{{ __('Login') }}</a>
                             <a class="no-underline hover:underline text-teal-darker text-sm" href="{{ url('/register') }}">{{ __('Register') }}</a>
                         @else
-                            <span class="text-teal-darker text-sm pr-4">{{ Auth::user()->name }}</span>
+                            <span class="text-teal-darker text-sm pr-4">
+                                {{ Auth::user()->name }}
+                            </span>
 
                             <a href="{{ route('logout') }}"
                                 class="no-underline hover:underline text-teal-darker text-sm"

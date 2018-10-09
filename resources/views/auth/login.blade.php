@@ -3,6 +3,7 @@
 @section('content')
 <div class="flex items-center px-6 md:px-0">
     <div class="w-full max-w-md md:mx-auto">
+        {!! $errors->first('registration', '<div class="p-4 bg-red-dark rounded mb-2"><span class="text-white text-md">:message</span></div>') !!}
         <div class="rounded shadow">
             <div class="font-medium text-lg text-teal-darker bg-teal p-3 rounded-t">
                 {{ __('Login') }}

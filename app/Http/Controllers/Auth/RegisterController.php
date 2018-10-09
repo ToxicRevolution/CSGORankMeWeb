@@ -69,4 +69,12 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
         ]);
     }
+    public function showRegistrationForm()
+    {
+        return redirect('/login')->withErrors(["registration" => "Please contact an administrator for account creation!"]);
+    }
+    public function register()
+    {
+        return redirect('/login')->withErrors(["registration" => "Please contact an administrator for account creation!"]);
+    }
 }

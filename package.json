@@ -15,8 +15,11 @@
         "laravel-mix": "^2.1",
         "laravel-mix-purgecss": "^2.2",
         "laravel-mix-tailwind": "^0.1.0",
+        "laravel-vue-pagination": "^2.1.0",
         "tailwindcss": "^0.6.6",
-        "vue": "^2.5.7"
+        "tailwindcss-tables": "^0.2.0",
+        "vue": "^2.5.7",
+        "vue-ads-pagination": "^1.1.0"
     },
     "dependencies": []
 }
