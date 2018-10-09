@@ -3,7 +3,7 @@
             <div class="font-medium text-lg text-white bg-teal p-3">
                 Panel Users
             </div>
-            <div class="bg-teal-lightest p-3">
+            <div class="bg-teal-lightest table-responsive p-3">
                 <table class="table">
                     <tr>
                         <th>ID</th>
@@ -13,7 +13,7 @@
                         <th>Created</th>
                         <th>Last Updated</th>
                     </tr>
-                    <tr v-for="user in users.data" :key="user.id">
+                    <tr v-for="user in users" :key="user.id">
                             <td>{{ user.id }}</td>
                             <td>{{ user.name }}</td>
                             <td>{{ user.email }}</td>
@@ -22,7 +22,6 @@
                             <td>{{ user.updated_at }}</td>
                     </tr>
                 </table>
-               <pagination :data="users" @pagination-change-page="getUsers"></pagination>
             </div>
         </div>
 </template>
@@ -35,11 +34,11 @@
             }
         },
         mounted() {
-            this.getUsers();
+            this.pageChange();
         },
         methods: {
-            getUsers(page=1){
-                axios.get('/users?page='+page)
+            pageChange(page=1){
+                axios.get('/users')
                     .then(response => {
                         this.users = response.data
                     })
