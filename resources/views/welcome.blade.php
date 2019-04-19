@@ -1,60 +1,22 @@
-<!DOCTYPE html>
-<html lang="{{ app()->getLocale() }}">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.app', ['class' => 'bg-default'])
 
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>{{ config('app.name', 'Laravel') }}</title>
-
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-</head>
-<body class="bg-teal-lightest font-sans font-normal antialiased">
-    <div class="flex flex-col">
-        @if(Route::has('login'))
-            <div class="absolute pin-t pin-r mt-4 mr-4">
-                @auth
-                    <a href="{{ url('/home') }}" class="no-underline hover:underline text-sm font-normal text-teal-darker uppercase">{{ __('Home') }}</a>
-                @else
-                    <a href="{{ route('login') }}" class="no-underline hover:underline text-sm font-normal text-teal-darker uppercase pr-6">{{ __('Login') }}</a>
-                    <a href="{{ route('register') }}" class="no-underline hover:underline text-sm font-normal text-teal-darker uppercase">{{ __('Register') }}</a>
-                @endauth
-            </div>
-        @endif
-
-        <div class="min-h-screen flex items-center justify-center">
-            <div class="flex flex-col justify-around h-full">
-                <div>
-                    <h1 class="text-grey-darker text-center font-thin tracking-wide text-5xl mb-6">
-                        {{ config('app.name', 'Laravel') }}
-                    </h1>
-                    <ul class="list-reset">
-                        <li class="inline pr-8">
-                            <a href="https://laravel.com/docs" class="no-underline hover:underline text-sm font-normal text-teal-darker uppercase" title="Documentation">Documentation</a>
-                        </li>
-                        <li class="inline pr-8">
-                            <a href="https://laracasts.com" class="no-underline hover:underline text-sm font-normal text-teal-darker uppercase" title="Laracasts">Laracasts</a>
-                        </li>
-                        <li class="inline pr-8">
-                            <a href="https://laravel-news.com" class="no-underline hover:underline text-sm font-normal text-teal-darker uppercase" title="News">News</a>
-                        </li>
-                        <li class="inline pr-8">
-                            <a href="https://nova.laravel.com" class="no-underline hover:underline text-sm font-normal text-teal-darker uppercase" title="Nova">Nova</a>
-                        </li>
-                        <li class="inline pr-8">
-                            <a href="https://forge.laravel.com" class="no-underline hover:underline text-sm font-normal text-teal-darker uppercase" title="Forge">Forge</a>
-                        </li>
-                        <li class="inline pr-8">
-                            <a href="https://github.com/laravel/laravel" class="no-underline hover:underline text-sm font-normal text-teal-darker uppercase" title="GitHub">GitHub</a>
-                        </li>
-                    </ul>
+@section('content')
+    <div class="header bg-gradient-primary py-7 py-lg-8">
+        <div class="container">
+            <div class="header-body text-center mt-7 mb-7">
+                <div class="row justify-content-center">
+                    <div class="col-lg-5 col-md-6">
+                        <h1 class="text-white">{{ __('Welcome to Argon Dashboard FREE Laravel Live Preview.') }}</h1>
+                    </div>
                 </div>
             </div>
         </div>
+        <div class="separator separator-bottom separator-skew zindex-100">
+            <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                <polygon class="fill-default" points="2560 0 2560 100 0 100"></polygon>
+            </svg>
+        </div>
     </div>
-</body>
-</html>
+
+    <div class="container mt--10 pb-5"></div>
+@endsection

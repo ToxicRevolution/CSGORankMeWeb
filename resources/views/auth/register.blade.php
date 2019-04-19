@@ -1,58 +1,100 @@
-@extends('layouts.app')
+@extends('layouts.app', ['class' => 'bg-default'])
 
 @section('content')
-<div class="flex items-center px-6 md:px-0">
-    <div class="w-full max-w-md md:mx-auto">
-        <div class="rounded shadow">
-            <div class="font-medium text-lg text-teal-darker bg-teal p-3 rounded-t">
-                Register
-            </div>
-            <div class="bg-white p-3 rounded-b">
-                <form class="form-horizontal" method="POST" action="{{ route('register') }}">
-                    {{ csrf_field() }}
+    @include('layouts.headers.guest')
 
-                    <div class="flex items-stretch mb-3">
-                        <label for="name" class="text-right font-semibold text-grey-dark text-sm pt-2 pr-3 align-middle w-1/4">Name</label>
-                        <div class="flex flex-col w-3/4">
-                            <input id="name" type="text" class="flex-grow h-8 px-2 border rounded {{ $errors->has('name') ? 'border-red-dark' : 'border-grey-light' }}" name="name" value="{{ old('name') }}" autofocus>
-                            {!! $errors->first('name', '<span class="text-red-dark text-sm mt-2">:message</span>') !!}
+    <div class="container mt--8 pb-5">
+        <!-- Table -->
+        <div class="row justify-content-center">
+            <div class="col-lg-6 col-md-8">
+                <div class="card bg-secondary shadow border-0">
+                    <div class="card-header bg-transparent pb-5">
+                        <div class="text-muted text-center mt-2 mb-4"><small>{{ __('Sign up with') }}</small></div>
+                        <div class="text-center">
+                            <a href="#" class="btn btn-neutral btn-icon mr-4">
+                                <span class="btn-inner--icon"><img src="{{ asset('argon') }}/img/icons/common/github.svg"></span>
+                                <span class="btn-inner--text">{{ __('Github') }}</span>
+                            </a>
+                            <a href="#" class="btn btn-neutral btn-icon">
+                                <span class="btn-inner--icon"><img src="{{ asset('argon') }}/img/icons/common/google.svg"></span>
+                                <span class="btn-inner--text">{{ __('Google') }}</span>
+                            </a>
                         </div>
                     </div>
-
-                    <div class="flex items-stretch mb-3">
-                        <label for="email" class="text-right font-semibold text-grey-dark text-sm pt-2 pr-3 align-middle w-1/4">E-Mail Address</label>
-                        <div class="flex flex-col w-3/4">
-                            <input id="email" type="email" class="flex-grow h-8 px-2 border rounded {{ $errors->has('email') ? 'border-red-dark' : 'border-grey-light' }}" name="email" value="{{ old('email') }}" required>
-                            {!! $errors->first('email', '<span class="text-red-dark text-sm mt-2">:message</span>') !!}
+                    <div class="card-body px-lg-5 py-lg-5">
+                        <div class="text-center text-muted mb-4">
+                            <small>{{ __('Or sign up with credentials') }}</small>
                         </div>
-                    </div>
+                        <form role="form" method="POST" action="{{ route('register') }}">
+                            @csrf
 
-                    <div class="flex items-stretch mb-4">
-                        <label for="password" class="text-right font-semibold text-grey-dark text-sm pt-2 pr-3 align-middle w-1/4">Password</label>
-                        <div class="flex flex-col w-3/4">
-                            <input id="password" type="password" class="flex-grow h-8 px-2 rounded border {{ $errors->has('password') ? 'border-red-dark' : 'border-grey-light' }}" name="password" required>
-                            {!! $errors->first('password', '<span class="text-red-dark text-sm mt-2">:message</span>') !!}
-                        </div>
+                            <div class="form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
+                                <div class="input-group input-group-alternative mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
+                                    </div>
+                                    <input class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('Name') }}" type="text" name="name" value="{{ old('name') }}" required autofocus>
+                                </div>
+                                @if ($errors->has('name'))
+                                    <span class="invalid-feedback" style="display: block;" role="alert">
+                                        <strong>{{ $errors->first('name') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                            <div class="form-group{{ $errors->has('email') ? ' has-danger' : '' }}">
+                                <div class="input-group input-group-alternative mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+                                    </div>
+                                    <input class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" placeholder="{{ __('Email') }}" type="email" name="email" value="{{ old('email') }}" required>
+                                </div>
+                                @if ($errors->has('email'))
+                                    <span class="invalid-feedback" style="display: block;" role="alert">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                            <div class="form-group{{ $errors->has('password') ? ' has-danger' : '' }}">
+                                <div class="input-group input-group-alternative">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
+                                    </div>
+                                    <input class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" placeholder="{{ __('Password') }}" type="password" name="password" required>
+                                </div>
+                                @if ($errors->has('password'))
+                                    <span class="invalid-feedback" style="display: block;" role="alert">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group input-group-alternative">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
+                                    </div>
+                                    <input class="form-control" placeholder="{{ __('Confirm Password') }}" type="password" name="password_confirmation" required>
+                                </div>
+                            </div>
+                            <div class="text-muted font-italic">
+                                <small>{{ __('password strength') }}: <span class="text-success font-weight-700">{{ __('strong') }}strong</span></small>
+                            </div>
+                            <div class="row my-4">
+                                <div class="col-12">
+                                    <div class="custom-control custom-control-alternative custom-checkbox">
+                                        <input class="custom-control-input" id="customCheckRegister" type="checkbox">
+                                        <label class="custom-control-label" for="customCheckRegister">
+                                            <span class="text-muted">{{ __('I agree with the') }} <a href="#!">{{ __('Privacy Policy') }}</a></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary mt-4">{{ __('Create account') }}</button>
+                            </div>
+                        </form>
                     </div>
-
-                    <div class="flex items-stretch mb-4">
-                        <label for="password_confirmation" class="text-right font-semibold text-grey-dark text-sm pt-2 pr-3 align-middle w-1/4">Confirm Password</label>
-                        <div class="flex flex-col w-3/4">
-                            <input id="password_confirmation" type="password" class="flex-grow h-8 px-2 rounded border {{ $errors->has('password_confirmation') ? 'border-red-dark' : 'border-grey-light' }}" name="password_confirmation" required>
-                            {!! $errors->first('password_confirmation', '<span class="text-red-dark text-sm mt-2">:message</span>') !!}
-                        </div>
-                    </div>
-
-                    <div class="flex">
-                        <div class="w-3/4 ml-auto">
-                            <button type="submit" class="bg-teal hover:bg-teal-dark text-white text-sm font-semibold py-2 px-4 rounded mr-3">
-                                Register
-                            </button>
-                        </div>
-                    </div>
-                </form>
+                </div>
             </div>
         </div>
     </div>
-</div>
 @endsection

@@ -1,52 +1,62 @@
-@extends('layouts.app')
+@extends('layouts.app', ['class' => 'bg-default'])
 
 @section('content')
-<div class="flex items-center">
-    <div class="md:w-1/2 md:mx-auto">
-        <div class="rounded shadow">
-            <div class="font-medium text-lg text-teal-darker bg-teal p-3 rounded-t">
-                {{ __('Reset Password') }}
-            </div>
-            <div class="bg-white p-3 rounded-b">
-                <form class="form-horizontal" method="POST" action="{{ route('password.request') }}">
-                    {{ csrf_field() }}
-
-                    <input type="hidden" name="token" value="{{ $token }}">
-
-                    <div class="flex items-stretch mb-3">
-                        <label for="email" class="text-right font-semibold text-grey-dark text-sm pt-2 pr-3 align-middle w-1/4">{{ __('E-Mail Address') }}</label>
-                        <div class="flex flex-col w-3/4">
-                            <input id="email" type="email" class="flex-grow h-8 px-2 border rounded {{ $errors->has('email') ? 'border-red-dark' : 'border-grey-light' }}" name="email" value="{{ $email or old('email') }}" required autofocus>
-                            {!! $errors->first('email', '<span class="text-red-dark text-sm mt-2">:message</span>') !!}
+    @include('layouts.headers.guest')
+    
+    <div class="container mt--8 pb-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-5 col-md-7">
+                <div class="card bg-secondary shadow border-0">
+                    <div class="card-body px-lg-5 py-lg-5">
+                        <div class="text-center text-muted mb-4">
+                            <small>{{ __('Reset Password') }}</small>
                         </div>
-                    </div>
+                        <form role="form" method="POST" action="{{ route('password.update') }}">
+                            @csrf
 
-                    <div class="flex items-stretch mb-3">
-                        <label for="password" class="text-right font-semibold text-grey-dark text-sm pt-2 pr-3 align-middle w-1/4">{{ __('Password') }}</label>
-                        <div class="flex flex-col w-3/4">
-                            <input id="password" type="password" class="flex-grow h-8 px-2 rounded border {{ $errors->has('password') ? 'border-red-dark' : 'border-grey-light' }}" name="password" required>
-                            {!! $errors->first('password', '<span class="text-red-dark text-sm mt-2">:message</span>') !!}
-                        </div>
-                    </div>
+                            <input type="hidden" name="token" value="{{ $token }}">
 
-                    <div class="flex items-stretch mb-3">
-                        <label for="password_confirmation" class="text-right font-semibold text-grey-dark text-sm pt-2 pr-3 align-middle w-1/4">{{ __('Confirm Password') }}</label>
-                        <div class="flex flex-col w-3/4">
-                            <input id="password_confirmation" type="password" class="flex-grow h-8 px-2 rounded border {{ $errors->has('password_confirmation') ? 'border-red-dark' : 'border-grey-light' }}" name="password_confirmation" required>
-                            {!! $errors->first('password_confirmation', '<span class="text-red-dark text-sm mt-2">:message</span>') !!}
-                        </div>
+                            <div class="form-group{{ $errors->has('email') ? ' has-danger' : '' }} mb-3">
+                                <div class="input-group input-group-alternative">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+                                    </div>
+                                    <input class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" placeholder="{{ __('Email') }}" type="email" name="email" value="{{ $email ?? old('email') }}" required autofocus>
+                                </div>
+                                @if ($errors->has('email'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                            <div class="form-group{{ $errors->has('password') ? ' has-danger' : '' }}">
+                                <div class="input-group input-group-alternative">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
+                                    </div>
+                                    <input class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" placeholder="{{ __('Password') }}" type="password" required>
+                                </div>
+                                @if ($errors->has('password'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group input-group-alternative">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
+                                    </div>
+                                    <input class="form-control" placeholder="{{ __('Confirm Password') }}" type="password" name="password_confirmation" required>
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary my-4">{{ __('Reset Password') }}</button>
+                            </div>
+                        </form>
                     </div>
-
-                    <div class="flex">
-                        <div class="w-3/4 ml-auto">
-                            <button type="submit" class="bg-teal hover:bg-teal-dark text-white text-sm font-semibold py-2 px-4 rounded mr-3">
-                                {{ __('Reset Password') }}
-                            </button>
-                        </div>
-                    </div>
-                </form>
+                </div>
             </div>
         </div>
     </div>
-</div>
 @endsection

@@ -16,10 +16,11 @@ Route::get('/', function () {
 });
 Auth::routes(['verify' => true]);
 
-Route::group(['prefix' => 'users', 'middleware'=>'auth'], function(){
-    Route::get('/', 'Admin\UserController@listUsers');
-    Route::get('/{id}', 'Admin\UserController@getUser');
-    Route::post('/manage/delete', 'Admin\UserController@deleteUser');
-    Route::post('/manage/create', 'Admin\UserController@createUser');
+Route::get('/admin', 'HomeController@index')->name('home');
+Route::group(['middleware' => 'auth'], function () {
+	Route::resource('user', 'UserController', ['except' => ['show']]);
+	Route::get('profile', ['as' => 'profile.edit', 'uses' => 'ProfileController@edit']);
+	Route::put('profile', ['as' => 'profile.update', 'uses' => 'ProfileController@update']);
+	Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'ProfileController@password']);
 });
-Route::get('/home', 'HomeController@index')->name('home');
+

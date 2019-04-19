@@ -1,56 +1,46 @@
-<!doctype html>
-<html lang="{{ app()->getLocale() }}">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+        <title>{{ config('app.name', 'Argon Dashboard') }}</title>
+        <!-- Favicon -->
+        <link href="/img/logo.svg" rel="icon" type="image/png">
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+        <!-- Icons -->
+        <link href="{{ asset('argon') }}/vendor/nucleo/css/nucleo.css" rel="stylesheet">
+        <link href="{{ asset('argon') }}/vendor/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+        <!-- Argon CSS -->
+        <link type="text/css" href="{{ asset('argon') }}/css/argon.css?v=1.0.0" rel="stylesheet">
+    </head>
+    <body class="{{ $class ?? '' }}">
+        @auth()
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                @csrf
+            </form>
+            @include('layouts.navbars.sidebar')
+        @endauth
+        
+        <div class="main-content">
+            @include('layouts.navbars.navbar')
+            @yield('content')
+        </div>
 
-    <!-- Styles -->
-    <link href="{{ mix('css/app.css') }}" rel="stylesheet">
-</head>
-<body class="bg-grey-light h-screen antialiased">
-    <div id="app">
-        <nav class="bg-white h-12 shadow mb-8 px-6 md:px-0">
-            <div class="container mx-auto h-full">
-                <div class="flex items-center justify-center h-12">
-                    <div class="mr-6 h-full">
-                        <a href="{{ url('/') }}" class="text-lg font-hairline no-underline">
-                            <div class="h-full flex items-center p-2 hover:bg-grey text-black hover:text-white">
-                                <img class="fill-current h-8 w-auto" src="/img/logo.svg" height="40px" width="auto" />
-                                {{ config('app.name', 'Laravel') }}
-                            </div>
-                        </a>
-                    </div>
-                    <div class="flex-1 text-right">
-                        @guest
-                            <a class="no-underline hover:underline text-teal-darker pr-3 text-sm" href="{{ url('/login') }}">{{ __('Login') }}</a>
-                            <a class="no-underline hover:underline text-teal-darker text-sm" href="{{ url('/register') }}">{{ __('Register') }}</a>
-                        @else
-                            <span class="text-teal-darker text-sm pr-4">
-                                {{ Auth::user()->name }}
-                            </span>
+        @guest()
+            @include('layouts.footers.guest')
+        @endguest
 
-                            <a href="{{ route('logout') }}"
-                                class="no-underline hover:underline text-teal-darker text-sm"
-                                onclick="event.preventDefault();
-                                document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden">
-                                {{ csrf_field() }}
-                            </form>
-                        @endguest
-                    </div>
-                </div>
-            </div>
-        </nav>
-
-        @yield('content')
-    </div>
-
-    <!-- Scripts -->
-    <script src="{{ mix('js/app.js') }}"></script>
-</body>
+        <script src="{{ asset('argon') }}/vendor/jquery/dist/jquery.min.js"></script>
+        <script src="{{ asset('argon') }}/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        
+        @stack('js')
+        
+        <!-- Argon JS -->
+        <script src="{{ asset('argon') }}/js/argon.js?v=1.0.0"></script>
+    </body>
 </html>

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "04ae014ed5bb0d41f83b19aebbdecfe4",
+    "content-hash": "2086d92b72ada04a80c11feb9398bfdb",
     "packages": [
         {
             "name": "defuse/php-encryption",
@@ -741,6 +741,49 @@
                 }
             ],
             "time": "2015-04-20T18:58:01+00:00"
+        },
+        {
+            "name": "laravel-frontend-presets/argon",
+            "version": "v1.0.10",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel-frontend-presets/argon.git",
+                "reference": "d7e0eaa6688815062931d0c31c1554d6bb61a3c8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel-frontend-presets/argon/zipball/d7e0eaa6688815062931d0c31c1554d6bb61a3c8",
+                "reference": "d7e0eaa6688815062931d0c31c1554d6bb61a3c8",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "^5.5"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "LaravelFrontendPresets\\ArgonPreset\\ArgonPresetServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "LaravelFrontendPresets\\ArgonPreset\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Laravel 5.x Front-end preset for argon",
+            "homepage": "https://github.com/creativetimofficial/argon-dashboard",
+            "keywords": [
+                "Argon",
+                "laravel",
+                "preset"
+            ],
+            "time": "2019-03-26T13:46:07+00:00"
         },
         {
             "name": "laravel-frontend-presets/tailwindcss",

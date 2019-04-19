@@ -20,7 +20,7 @@ class HomeController extends Controller
     /**
      * Show the application dashboard.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\View\View
      */
     public function index()
     {
@@ -38,7 +38,7 @@ class HomeController extends Controller
             $c = RankMe::on($db)->count();
             $playerCounts[$db] = $c;
         }
-        return view('home')->with("data", [
+        return view('dashboard')->with("data", [
             'userCount' => User::count(),
             'databases' => $valid_dbs,
             'playerCounts' => $playerCounts
