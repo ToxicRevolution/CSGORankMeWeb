@@ -33,7 +33,10 @@ v1.1.1 - Quickest release, utilizing server sided datatables, more stressful on 
 
 Start an Issue and Kenny or myself will reply and hopefully have a solution. 
 
-Additionally you can add me on steam <a href="http://steamcommunity.com/id/toxicandy7474">here</a>. Please leave a comment on my profile as to why you are adding me or add me on discord ToxicFrank#7474.
+Additionally you can add me on steam <a href="http://steamcommunity.com/id/toxicandy7474">here</a>. Please leave a comment on my profile as to why you are adding me or add me on discord ToxicFrank#7474. Our discord server can be accessed here: 
+
+[![Join our Discord server!](https://invidget.switchblade.xyz/PCw4NSRT3S)](http://discord.gg/PCw4NSRT3S)
+
 
 Please report any errors this way as well so that I can update and fix those errors.
 
@@ -75,9 +78,6 @@ CSGO Web Rank Me's Code Is Released Under The <a href="https://github.com/ToxicR
 	<li>https://twitter.com/VoidRealityGG</li>
 </ul>
 
-# Want updates on this project and other projects?
-
-Check out our website, <a href="https://toxicrevolution.net">ToxicRevolution.net</a> to see our current projects and updates regarding current projects. We like to interact with other server owners and in general with the community so feel free to drop by.
 
 # Donate!
 If you feel super generous you can donate me a drink or two here:
