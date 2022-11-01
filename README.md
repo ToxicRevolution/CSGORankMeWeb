@@ -1,7 +1,7 @@
 # CSGORankMeWeb
 Web interface for RankMe CSGO stat tracking plugin.
 
-## We no longer actively maintain this repo. 
+### We no longer actively maintain this repo. 
 
 # Purpose
 This web interface allows users to view the stats from Counter Strike Global Offensive servers running the RankMe plugin found <a href='https://forums.alliedmods.net/showthread.php?p=1456869'>Here</a> or Kento's version found <a href="https://forums.alliedmods.net/showthread.php?t=290063">Here</a>.
