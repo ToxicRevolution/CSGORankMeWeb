@@ -60,7 +60,7 @@ CSGO Web Rank Me's Code Is Released Under The <a href="https://github.com/ToxicR
 
 # Creator
 
-<h3> Andy Petrizilka </h3>
+<h3> Andy Petrizilka</h3>
 <ul>
 	<li>https://github.com/APet74</li>
 	<li>https://twitter.com/AndyPetrzilka</li>
@@ -74,10 +74,10 @@ CSGO Web Rank Me's Code Is Released Under The <a href="https://github.com/ToxicR
 	<li>https://twitter.com/kennyLtv</li>
 </ul>
 
-<h3>B3none </h3>
+<h3>B3none</h3>
 <ul>
-	<li>http://steamcommunity.com/id/b3none</li>
-	<li>https://twitter.com/VoidRealityGG</li>
+	<li>https://github.com/b3none</li>
+	<li>https://steamcommunity.com/id/b3none</li>
 </ul>
 
 
